@@ -1,20 +1,53 @@
 import * as React from "react"
 import Image from "next/image"
 import Link from "next/link"
+import { Metadata } from "next"
 import { ArrowRight, CheckCircle2, HeartPulse, ShieldAlert, Mic, MessageCircle, Activity, Music, Palette } from "lucide-react"
 import { Section } from "@/components/layout/Section"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { FadeIn, Float } from "@/components/animations/FadeIn"
 
-export const metadata = {
-  title: "Features | Kasama PH",
-  description: "Explore the features of Kasama PH: Medicine reminders, emergency alerts, voice memories, and daily activities designed for Filipino seniors.",
+export const metadata: Metadata = {
+  title: "Features | Medicine Reminders, SOS Alerts & More",
+  description: "Discover the features of Kasama PH: Promise Protocol medicine reminders, Bantay SOS emergency alerts, Legacy Vault voice memories, and senior-friendly activities.",
+  alternates: {
+    canonical: '/features',
+  },
 }
 
 export default function FeaturesPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Promise Protocol",
+        "description": "Medicine reminders that sound like a warm family conversation."
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Bantay SOS",
+        "description": "One-tap emergency button with GPS location sharing."
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Legacy Vault",
+        "description": "Voice memory recording to preserve family history."
+      }
+    ]
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* 1. AEO SUMMARY HEADER */}
       <Section className="pt-20 pb-16 md:pt-32 md:pb-24 bg-kasama-cream">
         <FadeIn className="mx-auto max-w-3xl text-center space-y-6">
@@ -91,8 +124,8 @@ export default function FeaturesPage() {
           <FadeIn direction="right" className="order-2 lg:order-1 relative aspect-square w-full rounded-3xl bg-white shadow-xl overflow-hidden border border-black/5">
             <Float delay={0.5}>
               <Image
-                src="/images/kasama/kasama-voice-memory-story.webp"
-                alt="Lolo Boy speaking into the app for the Legacy Vault, with Annie listening on her phone in a separate bubble."
+                src="/images/kasama/kasama-family-video-checkin.webp"
+                alt="A warm family video check-in showing Lola Zeny and her family connecting remotely through the Kasama app."
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"

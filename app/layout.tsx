@@ -24,12 +24,28 @@ export const metadata: Metadata = {
     template: '%s | Kasama PH',
     default: 'Kasama PH | Ang Kaibigan ng Lola at Lolo',
   },
-  description: 'Tech na may puso para sa mga senior ng Pilipinas. Medicine reminders, emergency alerts, and family connection in one simple app.',
+  description: 'Tech na may puso para sa mga senior ng Pilipinas. Medicine reminders, emergency alerts, and family connection in one simple app designed for Filipino families.',
+  keywords: [
+    'elderly care app Philippines', 
+    'medicine reminder for seniors', 
+    'Filipino family care app', 
+    'senior safety alert app', 
+    'remote care for elderly parents', 
+    'Kasama PH', 
+    'senior care Philippines',
+    'OFW family app',
+    'senior health monitoring Philippines'
+  ],
+  authors: [{ name: 'Kasama PH Team' }],
+  creator: 'Kasama PH',
+  publisher: 'Kasama PH',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   openGraph: {
-    title: {
-      template: '%s | Kasama PH',
-      default: 'Kasama PH | Ang Kaibigan ng Lola at Lolo',
-    },
+    title: 'Kasama PH | Ang Kaibigan ng Lola at Lolo',
     description: 'Tech na may puso para sa mga senior ng Pilipinas. Medicine reminders, emergency alerts, and family connection in one simple app.',
     url: siteUrl,
     siteName: 'Kasama PH',
@@ -38,12 +54,12 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: {
-      template: '%s | Kasama PH',
-      default: 'Kasama PH | Ang Kaibigan ng Lola at Lolo',
-    },
+    title: 'Kasama PH | Ang Kaibigan ng Lola at Lolo',
     description: 'Tech na may puso para sa mga senior ng Pilipinas. Medicine reminders, emergency alerts, and family connection in one simple app.',
     creator: '@kasamaph',
+  },
+  alternates: {
+    canonical: '/',
   },
   robots: {
     index: true,
@@ -60,7 +76,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${nunito.variable} scroll-smooth`}>
+    <html lang="en" className={`${inter.variable} ${nunito.variable}`} data-scroll-behavior="smooth">
       <body className="min-h-screen bg-kasama-cream text-kasama-espresso font-sans antialiased selection:bg-kasama-primary/20" suppressHydrationWarning>
         {children}
       </body>

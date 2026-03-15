@@ -1,5 +1,6 @@
 import * as React from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Heart } from "lucide-react"
 import { FOOTER_LINKS, SITE_CONFIG } from "@/lib/constants"
 
@@ -18,10 +19,22 @@ export function Footer() {
               className="mb-4 flex items-center gap-2 rounded-lg focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-kasama-secondary"
               aria-label={`${SITE_CONFIG.name} Home`}
             >
-              <Heart className="h-6 w-6 fill-kasama-primary text-kasama-primary" aria-hidden="true" />
-              <span className="font-display text-xl font-bold tracking-tight text-kasama-espresso">
-                {SITE_CONFIG.name}
-              </span>
+              <div className="relative h-8 w-8 overflow-hidden rounded-md">
+                <Image 
+                  src="/images/kasama/kasama-logo-icon.webp" 
+                  alt="Kasama PH Icon" 
+                  fill 
+                  className="object-contain" 
+                />
+              </div>
+              <div className="relative h-6 w-24">
+                <Image 
+                  src="/images/kasama/kasama-logo.webp" 
+                  alt="Kasama PH Logo" 
+                  fill 
+                  className="object-contain object-left" 
+                />
+              </div>
             </Link>
             <p className="text-base text-kasama-muted">
               {SITE_CONFIG.tagline}
@@ -35,6 +48,7 @@ export function Footer() {
                 key={link.href}
                 href={link.href}
                 className="rounded-md px-2 py-1 text-base font-medium text-kasama-espresso transition-colors hover:text-kasama-primary focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-kasama-secondary"
+                data-scroll-behavior="smooth"
               >
                 {link.label}
               </Link>

@@ -1,13 +1,17 @@
 import * as React from "react"
 import Image from "next/image"
 import Link from "next/link"
+import { Metadata } from "next"
 import { Heart } from "lucide-react"
 import { SITE_CONFIG } from "@/lib/constants"
 import { WaitlistForm } from "@/components/forms/WaitlistForm"
 
-export const metadata = {
-  title: "Join the Waitlist",
-  description: "Sign up to get early access to Kasama PH and updates on our launch.",
+export const metadata: Metadata = {
+  title: "Join the Waitlist | Be the First to Experience Kasama PH",
+  description: "Sign up to get early access to Kasama PH. Join our family and help us shape the future of elderly care in the Philippines.",
+  alternates: {
+    canonical: '/waitlist',
+  },
 }
 
 export default function WaitlistPage() {
@@ -44,7 +48,7 @@ export default function WaitlistPage() {
           {/* Decorative Illustration */}
           <div className="relative mt-12 aspect-video w-full max-w-lg rounded-3xl overflow-hidden shadow-2xl border border-black/5 bg-white/50 lg:mt-16">
             <Image
-              src="/images/waitlist-family.webp"
+              src="/images/kasama/kasama-preparing-for-love.webp"
               alt="A warm group illustration of Lola Zeny, Leo, Lolo Boy, and Annie looking directly at the user, smiling"
               fill
               className="object-cover"
@@ -72,7 +76,23 @@ export default function WaitlistPage() {
             {/* The Client-Side Form */}
             <WaitlistForm />
             
-            <p className="text-center text-sm text-kasama-muted lg:text-left">
+            {/* Trust Bullet Points */}
+            <div className="pt-4 space-y-2 text-sm text-kasama-espresso font-medium">
+              <div className="flex items-center gap-2">
+                <Heart className="h-4 w-4 text-kasama-primary" />
+                <span>Early access to Kasama</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Heart className="h-4 w-4 text-kasama-primary" />
+                <span>First to try new features</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Heart className="h-4 w-4 text-kasama-primary" />
+                <span>Help shape the app</span>
+              </div>
+            </div>
+
+            <p className="text-center text-sm text-kasama-muted lg:text-left mt-6">
               By joining, you agree to our{" "}
               <Link href="#" className="underline underline-offset-4 hover:text-kasama-primary">
                 Privacy Policy

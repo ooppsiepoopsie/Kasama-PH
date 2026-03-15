@@ -1,20 +1,55 @@
 import * as React from "react"
 import Image from "next/image"
 import Link from "next/link"
+import { Metadata } from "next"
 import { UserPlus, HeartPulse, ShieldCheck, QrCode, Smartphone, ArrowRight } from "lucide-react"
 import { Section } from "@/components/layout/Section"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { FadeIn, Float } from "@/components/animations/FadeIn"
 
-export const metadata = {
-  title: "How It Works | Kasama PH",
-  description: "Learn how easy it is to set up Kasama PH. Family members configure the app remotely, and seniors simply scan a QR code to get started.",
+export const metadata: Metadata = {
+  title: "How It Works | Simple Setup for Seniors",
+  description: "Learn how easy it is to set up Kasama PH. Remote configuration for family members and simple QR code login for seniors. No passwords needed.",
+  alternates: {
+    canonical: '/how-it-works',
+  },
 }
 
 export default function HowItWorksPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to set up Kasama PH",
+    "description": "Step-by-step guide to setting up the Kasama PH app for your family.",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Create Family Account",
+        "text": "The primary caregiver downloads the app and creates the main family account."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "Setup Senior Profile",
+        "text": "Add Lola or Lolo's details, medicine schedule, and emergency contacts remotely."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "QR Code Scan",
+        "text": "Senior scans a unique QR code to instantly log in and configure their device."
+      }
+    ]
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* 1. AEO SUMMARY HEADER */}
       <Section className="pt-20 pb-16 md:pt-32 md:pb-24 bg-kasama-cream">
         <FadeIn className="mx-auto max-w-3xl text-center space-y-6">

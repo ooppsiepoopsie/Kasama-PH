@@ -11,12 +11,7 @@ const nextConfig: NextConfig = {
 
   images: {
     // Allows external images if you decide to use a CMS or CDN later
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "picsum.photos",
-      },
-    ],
+    remotePatterns: [],
   },
 };
 

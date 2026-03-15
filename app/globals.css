@@ -24,4 +24,8 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-display tracking-tight text-kasama-espresso;
   }
+
+  html[data-scroll-behavior="smooth"] {
+    scroll-behavior: smooth;
+  }
 }

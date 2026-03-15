@@ -1,20 +1,43 @@
 import * as React from "react"
 import Image from "next/image"
 import Link from "next/link"
+import { Metadata } from "next"
 import { Heart, Users, Home, ArrowRight } from "lucide-react"
 import { Section } from "@/components/layout/Section"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { FadeIn, Float } from "@/components/animations/FadeIn"
 
-export const metadata = {
-  title: "About Us | Kasama PH",
-  description: "Learn about the mission behind Kasama PH, our cultural pillars, and the characters that represent the Filipino families we serve.",
+export const metadata: Metadata = {
+  title: "About Us | Our Mission & Cultural Pillars",
+  description: "Learn about the mission behind Kasama PH, our cultural pillars of Pagmamahal, Bayanihan, and Paggalang, and the families we serve.",
+  alternates: {
+    canonical: '/about',
+  },
 }
 
 export default function AboutPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About Kasama PH",
+    "description": "Information about the mission, values, and team behind Kasama PH, an elderly care application for Filipino families.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Kasama PH",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.kasama.ph/images/kasama/kasama-logo-icon.webp"
+      }
+    }
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* 1. MISSION HERO (AEO Summary) */}
       <Section className="pt-20 pb-16 md:pt-32 md:pb-24 bg-kasama-cream">
         <FadeIn className="mx-auto max-w-3xl text-center space-y-6">
@@ -96,7 +119,7 @@ export default function AboutPage() {
           <FadeIn delay={0.1} className="flex flex-col items-center text-center space-y-4">
             <div className="relative aspect-square w-full max-w-[200px] overflow-hidden rounded-full border-4 border-white shadow-lg bg-kasama-primary/10">
               <Image
-                src="/images/character-lola-zeny.webp"
+                src="/images/kasama/placeholder-portrait-lola-zeny.webp"
                 alt="Lola Zeny, a warm and smiling Filipino grandmother"
                 fill
                 className="object-cover"
@@ -116,7 +139,7 @@ export default function AboutPage() {
           <FadeIn delay={0.2} className="flex flex-col items-center text-center space-y-4">
             <div className="relative aspect-square w-full max-w-[200px] overflow-hidden rounded-full border-4 border-white shadow-lg bg-kasama-secondary/10">
               <Image
-                src="/images/character-leo.webp"
+                src="/images/kasama/placeholder-portrait-leo.webp"
                 alt="Leo, a caring Filipino son working in an office"
                 fill
                 className="object-cover"
@@ -136,7 +159,7 @@ export default function AboutPage() {
           <FadeIn delay={0.3} className="flex flex-col items-center text-center space-y-4">
             <div className="relative aspect-square w-full max-w-[200px] overflow-hidden rounded-full border-4 border-white shadow-lg bg-kasama-espresso/10">
               <Image
-                src="/images/character-lolo-boy.webp"
+                src="/images/kasama/placeholder-portrait-lolo-boy.webp"
                 alt="Lolo Boy, a cheerful Filipino grandfather"
                 fill
                 className="object-cover"
@@ -156,7 +179,7 @@ export default function AboutPage() {
           <FadeIn delay={0.4} className="flex flex-col items-center text-center space-y-4">
             <div className="relative aspect-square w-full max-w-[200px] overflow-hidden rounded-full border-4 border-white shadow-lg bg-kasama-primary/10">
               <Image
-                src="/images/character-annie.webp"
+                src="/images/kasama/placeholder-portrait-annie.webp"
                 alt="Annie, a supportive Filipino daughter living abroad"
                 fill
                 className="object-cover"
@@ -200,7 +223,7 @@ export default function AboutPage() {
           {/* Team Image Placeholder */}
           <FadeIn direction="left" delay={0.2} className="relative aspect-video w-full rounded-3xl bg-kasama-cream shadow-xl overflow-hidden border border-black/5">
             <Image
-              src="/images/about-team-story.webp"
+              src="/images/kasama/placeholder-team-story.webp"
               alt="A diverse team of Filipino creators working together on the Kasama PH app"
               fill
               className="object-cover"
