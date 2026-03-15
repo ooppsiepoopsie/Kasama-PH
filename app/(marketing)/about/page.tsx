@@ -119,7 +119,7 @@ export default function AboutPage() {
           <FadeIn delay={0.1} className="flex flex-col items-center text-center space-y-4">
             <div className="relative aspect-square w-full max-w-[200px] overflow-hidden rounded-full border-4 border-white shadow-lg bg-kasama-primary/10">
               <Image
-                src="/images/kasama/placeholder-portrait-lola-zeny.webp"
+                src="/images/kasama/lolo-boy-lola-zeny-happy.webp"
                 alt="Lola Zeny, a warm and smiling Filipino grandmother"
                 fill
                 className="object-cover"
@@ -139,7 +139,7 @@ export default function AboutPage() {
           <FadeIn delay={0.2} className="flex flex-col items-center text-center space-y-4">
             <div className="relative aspect-square w-full max-w-[200px] overflow-hidden rounded-full border-4 border-white shadow-lg bg-kasama-secondary/10">
               <Image
-                src="/images/kasama/placeholder-portrait-leo.webp"
+                src="/images/kasama/annie-leo-family-support.webp"
                 alt="Leo, a caring Filipino son working in an office"
                 fill
                 className="object-cover"
@@ -159,7 +159,7 @@ export default function AboutPage() {
           <FadeIn delay={0.3} className="flex flex-col items-center text-center space-y-4">
             <div className="relative aspect-square w-full max-w-[200px] overflow-hidden rounded-full border-4 border-white shadow-lg bg-kasama-espresso/10">
               <Image
-                src="/images/kasama/placeholder-portrait-lolo-boy.webp"
+                src="/images/kasama/kasama-whole-fam.webp"
                 alt="Lolo Boy, a cheerful Filipino grandfather"
                 fill
                 className="object-cover"
@@ -179,7 +179,7 @@ export default function AboutPage() {
           <FadeIn delay={0.4} className="flex flex-col items-center text-center space-y-4">
             <div className="relative aspect-square w-full max-w-[200px] overflow-hidden rounded-full border-4 border-white shadow-lg bg-kasama-primary/10">
               <Image
-                src="/images/kasama/placeholder-portrait-annie.webp"
+                src="/images/kasama/kasama-preparing-for-love.webp"
                 alt="Annie, a supportive Filipino daughter living abroad"
                 fill
                 className="object-cover"
@@ -223,7 +223,7 @@ export default function AboutPage() {
           {/* Team Image Placeholder */}
           <FadeIn direction="left" delay={0.2} className="relative aspect-video w-full rounded-3xl bg-kasama-cream shadow-xl overflow-hidden border border-black/5">
             <Image
-              src="/images/kasama/placeholder-team-story.webp"
+              src="/images/kasama/her-teaching-my-learning.webp"
               alt="A diverse team of Filipino creators working together on the Kasama PH app"
               fill
               className="object-cover"

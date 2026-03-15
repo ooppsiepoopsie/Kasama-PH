@@ -21,7 +21,7 @@ export function Footer() {
             >
               <div className="relative h-8 w-8 overflow-hidden rounded-md">
                 <Image 
-                  src="/images/kasama/kasama-logo-icon.webp" 
+                  src="/images/kasama/logo-icon.webp" 
                   alt="Kasama PH Icon" 
                   fill 
                   className="object-contain" 

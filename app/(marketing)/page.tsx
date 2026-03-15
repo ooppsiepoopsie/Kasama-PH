@@ -119,7 +119,7 @@ export default function LandingPage() {
             <Float delay={0}>
               <div className="relative aspect-square w-full overflow-hidden rounded-3xl border border-black/5 bg-kasama-cream shadow-md">
                 <Image
-                  src="/images/kasama/placeholder-comic-leo-worry.webp"
+                  src="/images/kasama/annie-leo-family-support.webp"
                   alt="Leo looking worried at his office desk, thinking about his mother"
                   fill
                   className="object-cover"
@@ -249,7 +249,7 @@ export default function LandingPage() {
               <CardContent className="mt-auto pt-6">
                 <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-black/5 bg-kasama-cream">
                   <Image
-                    src="/images/kasama/kasama-legacy-vault-photo-scan.webp"
+                    src="/images/kasama/kasama-voice-memory-story.webp"
                     alt="Lolo Boy recording a story into the Legacy Vault"
                     fill
                     className="object-cover"
@@ -335,7 +335,7 @@ export default function LandingPage() {
             <Card className="flex flex-col h-full text-center items-center p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
               <div className="relative aspect-square w-32 overflow-hidden rounded-full border-4 border-white shadow-md bg-kasama-primary/10 mb-4">
                 <Image
-                  src="/images/kasama/placeholder-portrait-lola-zeny.webp"
+                  src="/images/kasama/lolo-boy-lola-zeny-happy.webp"
                   alt="Lola Zeny"
                   fill
                   className="object-cover"
@@ -355,7 +355,7 @@ export default function LandingPage() {
             <Card className="flex flex-col h-full text-center items-center p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
               <div className="relative aspect-square w-32 overflow-hidden rounded-full border-4 border-white shadow-md bg-kasama-secondary/10 mb-4">
                 <Image
-                  src="/images/kasama/placeholder-portrait-leo.webp"
+                  src="/images/kasama/annie-leo-family-support.webp"
                   alt="Leo"
                   fill
                   className="object-cover"
@@ -375,7 +375,7 @@ export default function LandingPage() {
             <Card className="flex flex-col h-full text-center items-center p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
               <div className="relative aspect-square w-32 overflow-hidden rounded-full border-4 border-white shadow-md bg-kasama-espresso/10 mb-4">
                 <Image
-                  src="/images/kasama/placeholder-portrait-lolo-boy.webp"
+                  src="/images/kasama/kasama-whole-fam.webp"
                   alt="Lolo Boy"
                   fill
                   className="object-cover"
@@ -395,7 +395,7 @@ export default function LandingPage() {
             <Card className="flex flex-col h-full text-center items-center p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
               <div className="relative aspect-square w-32 overflow-hidden rounded-full border-4 border-white shadow-md bg-kasama-primary/10 mb-4">
                 <Image
-                  src="/images/kasama/placeholder-portrait-annie.webp"
+                  src="/images/kasama/kasama-preparing-for-love.webp"
                   alt="Annie"
                   fill
                   className="object-cover"

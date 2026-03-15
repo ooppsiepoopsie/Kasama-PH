@@ -150,7 +150,7 @@ export default function HowItWorksPage() {
                     <div className="relative aspect-video w-full max-w-sm overflow-hidden rounded-xl border border-black/5 bg-kasama-cream mt-4">
                       <Float>
                         <Image
-                          src="/images/kasama/placeholder-qr-scan.webp"
+                          src="/images/kasama/kasama-tech-for-seniors.webp"
                           alt="Lola Zeny scanning a QR code on Leo's phone using her tablet"
                           fill
                           className="object-cover"
@@ -198,7 +198,7 @@ export default function HowItWorksPage() {
           <FadeIn direction="left" delay={0.2} className="relative aspect-square w-full rounded-3xl bg-white shadow-xl overflow-hidden border border-black/5">
             <Float>
               <Image
-                src="/images/kasama/placeholder-pwa-install.webp"
+                src="/images/kasama/kasama-family-video-call.webp"
                 alt="A smartphone screen showing the 'Add to Home Screen' prompt for the Kasama PH app"
                 fill
                 className="object-cover"
