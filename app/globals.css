@@ -1,0 +1,27 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  /* Kasama PH Color Palette */
+  --color-kasama-primary: #FF715B; /* Soft Tangerine / Coral */
+  --color-kasama-primary-hover: #E65A45;
+  --color-kasama-secondary: #2A9D8F; /* Calming Teal */
+  --color-kasama-secondary-hover: #218276;
+  --color-kasama-cream: #FFFCF9; /* Warm Cream Background */
+  --color-kasama-espresso: #2B2118; /* Deep Espresso Text */
+  --color-kasama-muted: #8A7D72; /* Warm Gray Muted Text */
+
+  /* Typography */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-kasama-cream text-kasama-espresso font-sans text-lg antialiased selection:bg-kasama-primary/20 selection:text-kasama-espresso;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight text-kasama-espresso;
+  }
+}
