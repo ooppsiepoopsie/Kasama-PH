@@ -43,60 +43,52 @@ export default function LandingPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       {/* 1. HERO SECTION */}
-      <Section className="pt-20 pb-16 md:pt-32 md:pb-24 overflow-hidden relative">
-        {/* Slight gradient background */}
-        <div className="absolute inset-0 -z-20 bg-gradient-to-b from-kasama-cream via-white to-kasama-cream" aria-hidden="true" />
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
-          <FadeIn direction="right" className="flex flex-col justify-center space-y-8 text-center lg:text-left">
-            <div className="space-y-4">
-              <h1 className="text-5xl font-extrabold tracking-tight text-kasama-espresso sm:text-6xl xl:text-7xl">
+      <Section className="pt-20 pb-16 md:pt-32 md:pb-24 overflow-hidden relative bg-white">
+        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
+          <FadeIn direction="right" className="flex flex-col justify-center space-y-10 text-center lg:text-left">
+            <div className="space-y-6">
+              <h1 className="text-5xl font-bold tracking-tight text-kasama-espresso sm:text-6xl xl:text-7xl leading-tight">
                 Kasama: Ang Kaibigan ng Lola at Lolo
               </h1>
-              <p className="mx-auto max-w-2xl text-xl text-kasama-espresso font-medium lg:mx-0">
+              <p className="mx-auto max-w-2xl text-xl text-kasama-espresso/80 font-medium lg:mx-0 leading-[1.6]">
                 An app that helps Filipino families care for their elderly parents through medicine reminders, emergency alerts, and daily connection.
               </p>
-              <p className="mx-auto max-w-2xl text-lg text-kasama-muted lg:mx-0">
+              <p className="mx-auto max-w-2xl text-lg text-kasama-muted lg:mx-0 leading-[1.6]">
                 Simple lang. Hindi ka nag-iisa, Lo. A comprehensive elderly care app designed for seniors.
               </p>
             </div>
             <div className="flex flex-col gap-4 sm:flex-row sm:justify-center lg:justify-start">
               <Link href="/waitlist" tabIndex={-1}>
-                <Button size="lg" className="w-full sm:w-auto">
+                <Button size="lg" className="w-full sm:w-auto rounded-full px-10 py-7 text-lg shadow-sm hover:shadow-md transition-all">
                   Join Waitlist
                 </Button>
               </Link>
               <Link href="/features" tabIndex={-1}>
-                <Button variant="secondary" size="lg" className="w-full sm:w-auto group">
+                <Button variant="outline" size="lg" className="w-full sm:w-auto rounded-full px-10 py-7 text-lg border-kasama-espresso/10 text-kasama-espresso hover:bg-kasama-espresso/5 transition-all">
                   See Features
-                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" aria-hidden="true" />
                 </Button>
               </Link>
             </div>
           </FadeIn>
           
-          {/* Hero Image: Group shot of Lola Zeny, Leo, Lolo Boy, Annie */}
+          {/* Hero Image: Focused Brand Logo */}
           <FadeIn direction="left" delay={0.2} className="relative mx-auto w-full max-w-xl lg:max-w-none">
-            <Float>
-              <div className="relative aspect-square w-full rounded-3xl bg-white/50 shadow-2xl overflow-hidden border border-black/5">
-                <Image
-                  src="/images/kasama/kasama-grandparents-celebration.webp"
-                  alt="Lola Zeny, Leo, Lolo Boy, and Annie gathered around a tablet smiling"
-                  fill
-                  className="object-cover scale-105"
-                  priority
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
+            <Float duration={6} yOffset={10}>
+              <div className="relative aspect-square w-full rounded-[40px] bg-white shadow-[0_20px_50px_rgba(0,0,0,0.05)] overflow-hidden border border-black/5 flex items-center justify-center p-12 lg:p-24">
+                <div className="relative w-full h-full">
+                  <Image
+                    src="/images/kasama/kasama-logo.webp"
+                    alt="Kasama PH Logo"
+                    fill
+                    className="object-contain"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    priority
+                  />
+                </div>
               </div>
             </Float>
-            {/* Decorative background blob */}
-            <div className="absolute -inset-4 -z-10 rounded-full bg-kasama-primary/10 blur-3xl" aria-hidden="true" />
-            
-            {/* Subtle floating icon */}
-            <Float delay={0.5} className="absolute -top-6 -right-6 z-10 hidden md:block">
-              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white shadow-xl border border-black/5 text-kasama-primary">
-                <HeartPulse className="h-8 w-8" />
-              </div>
-            </Float>
+            {/* Subtle background glow */}
+            <div className="absolute -inset-10 -z-10 rounded-full bg-kasama-primary/5 blur-3xl" aria-hidden="true" />
           </FadeIn>
         </div>
       </Section>
@@ -123,7 +115,7 @@ export default function LandingPage() {
                   alt="Leo looking worried at his office desk, thinking about his mother"
                   fill
                   className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 33vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
                 />
               </div>
             </Float>
@@ -141,7 +133,7 @@ export default function LandingPage() {
                   alt="Lola Zeny smiling as the Kasama app reminds her to take her medicine"
                   fill
                   className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 33vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
                 />
               </div>
             </Float>
@@ -159,7 +151,7 @@ export default function LandingPage() {
                   alt="Leo smiling at his phone after receiving a notification that his mother took her medicine"
                   fill
                   className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 33vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
                 />
               </div>
             </Float>
@@ -201,7 +193,7 @@ export default function LandingPage() {
                     alt="Lola Zeny interacting with the Promise Protocol medicine reminder"
                     fill
                     className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 33vw"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
                   />
                 </div>
               </CardContent>
@@ -227,7 +219,7 @@ export default function LandingPage() {
                     alt="Leo receiving an urgent Bantay SOS alert on his phone"
                     fill
                     className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 33vw"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
                   />
                 </div>
               </CardContent>
@@ -253,7 +245,7 @@ export default function LandingPage() {
                     alt="Lolo Boy recording a story into the Legacy Vault"
                     fill
                     className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 33vw"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
                   />
                 </div>
               </CardContent>
@@ -331,7 +323,7 @@ export default function LandingPage() {
 
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {/* Lola Zeny */}
-          <FadeIn delay={0.1} className="h-full">
+          <FadeIn direction="up" delay={0.1} className="h-full">
             <Card className="flex flex-col h-full text-center items-center p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
               <div className="relative aspect-square w-32 overflow-hidden rounded-full border-4 border-white shadow-md bg-kasama-primary/10 mb-4">
                 <Image
@@ -351,7 +343,7 @@ export default function LandingPage() {
           </FadeIn>
 
           {/* Leo */}
-          <FadeIn delay={0.2} className="h-full">
+          <FadeIn direction="up" delay={0.2} className="h-full">
             <Card className="flex flex-col h-full text-center items-center p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
               <div className="relative aspect-square w-32 overflow-hidden rounded-full border-4 border-white shadow-md bg-kasama-secondary/10 mb-4">
                 <Image
@@ -371,7 +363,7 @@ export default function LandingPage() {
           </FadeIn>
 
           {/* Lolo Boy */}
-          <FadeIn delay={0.3} className="h-full">
+          <FadeIn direction="up" delay={0.3} className="h-full">
             <Card className="flex flex-col h-full text-center items-center p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
               <div className="relative aspect-square w-32 overflow-hidden rounded-full border-4 border-white shadow-md bg-kasama-espresso/10 mb-4">
                 <Image
@@ -391,7 +383,7 @@ export default function LandingPage() {
           </FadeIn>
 
           {/* Annie */}
-          <FadeIn delay={0.4} className="h-full">
+          <FadeIn direction="up" delay={0.4} className="h-full">
             <Card className="flex flex-col h-full text-center items-center p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
               <div className="relative aspect-square w-32 overflow-hidden rounded-full border-4 border-white shadow-md bg-kasama-primary/10 mb-4">
                 <Image

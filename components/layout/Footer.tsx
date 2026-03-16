@@ -25,6 +25,7 @@ export function Footer() {
                   alt="Kasama PH Icon" 
                   fill 
                   className="object-contain" 
+                  sizes="32px"
                 />
               </div>
               <div className="relative h-6 w-24">
@@ -33,6 +34,7 @@ export function Footer() {
                   alt="Kasama PH Logo" 
                   fill 
                   className="object-contain object-left" 
+                  sizes="96px"
                 />
               </div>
             </Link>

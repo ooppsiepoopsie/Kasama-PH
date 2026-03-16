@@ -4,7 +4,7 @@ import * as React from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
-import { Menu, X, Heart } from "lucide-react"
+import { Menu, X } from "lucide-react"
 import { motion, AnimatePresence } from "motion/react"
 import { Button } from "@/components/ui/button"
 import { NAVIGATION_LINKS, SITE_CONFIG } from "@/lib/constants"
@@ -20,39 +20,33 @@ export function Navbar() {
   }, [pathname])
 
   return (
-    <header className="sticky top-0 z-50 w-full overflow-x-hidden border-b border-black/5 bg-kasama-cream/90 backdrop-blur-md transition-all">
+    <header className="sticky top-0 z-50 w-full overflow-x-hidden border-b border-black/5 bg-white/60 backdrop-blur-xl transition-all">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         
         {/* Logo */}
         <Link 
           href="/" 
           onClick={() => setIsMobileMenuOpen(false)}
-          className="flex items-center gap-2 rounded-lg focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-kasama-secondary"
+          className="flex items-center gap-3 rounded-lg focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-kasama-secondary transition-opacity hover:opacity-90"
           aria-label={`${SITE_CONFIG.name} Home`}
         >
-          <div className="relative h-8 w-8 overflow-hidden rounded-md">
+          <div className="relative h-10 w-10 shrink-0">
             <Image 
               src="/images/kasama/logo-icon.webp" 
               alt="Kasama PH Icon" 
               fill 
               className="object-contain" 
+              sizes="40px"
+              priority
             />
           </div>
-          <div className="relative h-6 w-24 hidden sm:block">
-            <Image 
-              src="/images/kasama/kasama-logo.webp" 
-              alt="Kasama PH Logo" 
-              fill 
-              className="object-contain object-left" 
-            />
-          </div>
-          <span className="font-display text-2xl font-bold tracking-tight text-kasama-espresso sm:hidden">
-            {SITE_CONFIG.name}
+          <span className="font-display text-2xl font-bold tracking-tight text-kasama-espresso">
+            Kasama PH
           </span>
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8" aria-label="Main Navigation">
+        <nav className="hidden md:flex items-center gap-10" aria-label="Main Navigation">
           {NAVIGATION_LINKS.map((link) => {
             const isActive = pathname === link.href;
             return (
@@ -60,15 +54,12 @@ export function Navbar() {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "relative rounded-md px-2 py-1 text-base font-medium transition-colors hover:text-kasama-primary focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-kasama-secondary",
+                  "relative rounded-md px-2 py-1 text-sm font-medium tracking-widest uppercase transition-all hover:opacity-70 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-kasama-secondary",
                   isActive ? "text-kasama-primary font-bold" : "text-kasama-espresso"
                 )}
                 aria-current={isActive ? "page" : undefined}
               >
                 {link.label}
-                {isActive && (
-                  <span className="absolute -bottom-1 left-0 h-0.5 w-full bg-kasama-primary rounded-full" />
-                )}
               </Link>
             );
           })}
@@ -77,7 +68,9 @@ export function Navbar() {
         {/* Desktop CTA */}
         <div className="hidden md:flex">
           <Link href="/waitlist" tabIndex={-1}>
-            <Button>Join Waitlist</Button>
+            <Button variant="outline" className="border-kasama-primary text-kasama-primary hover:bg-kasama-primary hover:text-white px-6 rounded-full text-sm font-semibold transition-all">
+              Join Waitlist
+            </Button>
           </Link>
         </div>
 

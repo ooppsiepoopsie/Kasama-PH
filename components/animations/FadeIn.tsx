@@ -54,9 +54,11 @@ interface FloatProps {
   children: React.ReactNode
   className?: string
   delay?: number
+  duration?: number
+  yOffset?: number
 }
 
-export function Float({ children, className, delay = 0 }: FloatProps) {
+export function Float({ children, className, delay = 0, duration = 4, yOffset = 10 }: FloatProps) {
   const shouldReduceMotion = useReducedMotion()
 
   if (shouldReduceMotion) {
@@ -65,9 +67,9 @@ export function Float({ children, className, delay = 0 }: FloatProps) {
 
   return (
     <motion.div
-      animate={{ y: [0, -10, 0] }}
+      animate={{ y: [0, -yOffset, 0] }}
       transition={{
-        duration: 4,
+        duration: duration,
         repeat: Infinity,
         ease: "easeInOut",
         delay: delay

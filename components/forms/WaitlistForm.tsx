@@ -70,9 +70,6 @@ export function WaitlistForm() {
     // Mock API call delay
     await new Promise((resolve) => setTimeout(resolve, 1500))
 
-    // TODO: Integrate with real backend (e.g., Vercel KV, Supabase, or custom API)
-    console.log("Waitlist submission:", formData)
-
     setIsSubmitting(false)
     setIsSuccess(true)
   }
