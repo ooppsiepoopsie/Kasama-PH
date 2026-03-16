@@ -11,6 +11,7 @@ const nextConfig: NextConfig = {
 
   images: {
     // Allows external images if you decide to use a CMS or CDN later
+    formats: ['image/avif', 'image/webp'],
     remotePatterns: [],
   },
 };

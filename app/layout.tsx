@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: '%s | Kasama PH',
     default: 'Kasama PH | Ang Kaibigan ng Lola at Lolo',
   },
-  description: 'Tech na may puso para sa mga senior ng Pilipinas. Medicine reminders, emergency alerts, and family connection in one simple app designed for Filipino families.',
+  description: 'A premium elderly care app for Filipino families, featuring medicine reminders, emergency alerts, and family connection.',
   keywords: [
     'elderly care app Philippines', 
     'medicine reminder for seniors', 
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Kasama PH | Ang Kaibigan ng Lola at Lolo',
-    description: 'Tech na may puso para sa mga senior ng Pilipinas. Medicine reminders, emergency alerts, and family connection in one simple app.',
+    description: 'A premium elderly care app for Filipino families, featuring medicine reminders, emergency alerts, and family connection.',
     url: siteUrl,
     siteName: 'Kasama PH',
     locale: 'en_PH',
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Kasama PH | Ang Kaibigan ng Lola at Lolo',
-    description: 'Tech na may puso para sa mga senior ng Pilipinas. Medicine reminders, emergency alerts, and family connection in one simple app.',
+    description: 'A premium elderly care app for Filipino families, featuring medicine reminders, emergency alerts, and family connection.',
     creator: '@kasamaph',
   },
   alternates: {

@@ -27,7 +27,7 @@ export default function AboutPage() {
       "name": "Kasama PH",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://www.kasama.ph/images/kasama/kasama-logo-icon.webp"
+        "url": "https://www.kasama.ph/images/kasama/logo-icon.webp"
       }
     }
   };

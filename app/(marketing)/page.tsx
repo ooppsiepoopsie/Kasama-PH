@@ -10,7 +10,7 @@ import { FadeIn, Float } from "@/components/animations/FadeIn"
 
 export const metadata: Metadata = {
   title: 'Kasama PH | Ang Kaibigan ng Lola at Lolo',
-  description: 'The comprehensive elderly care app for Filipino families. Medicine reminders, emergency alerts (Bantay SOS), and connection tools for remote caregiving.',
+  description: 'A premium elderly care app for Filipino families, featuring medicine reminders, emergency alerts, and family connection.',
   alternates: {
     canonical: '/',
   },
