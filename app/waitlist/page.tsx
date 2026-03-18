@@ -1,6 +1,7 @@
 'use client';
 
 import * as React from "react"
+import { useState, useEffect } from 'react';
 import Image from "next/image"
 import Link from "next/link"
 import { Heart } from "lucide-react"
@@ -9,6 +10,14 @@ import { WaitlistForm } from "@/components/forms/WaitlistForm"
 import { LanguageProvider } from "@/components/LanguageProvider"
 
 export default function WaitlistPage() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null; // Skip rendering during the server-side build phase
+
   return (
     <LanguageProvider>
       <div className="flex min-h-screen flex-col bg-kasama-cream">
