@@ -7,7 +7,6 @@ import { Section } from "@/components/layout/Section"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { FadeIn, Float } from "@/components/animations/FadeIn"
-import { useLanguage } from "@/lib/i18n"
 
 export const metadata: Metadata = {
   title: "How It Works | Simple Setup for Seniors",
@@ -18,7 +17,6 @@ export const metadata: Metadata = {
 }
 
 export default function HowItWorksPage() {
-  const { t } = useLanguage();
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "HowTo",
@@ -56,12 +54,12 @@ export default function HowItWorksPage() {
       <Section className="pt-20 pb-16 md:pt-32 md:pb-24 bg-kasama-cream">
         <FadeIn className="mx-auto max-w-3xl text-center space-y-6">
           <h1 className="text-5xl font-extrabold tracking-tight text-kasama-espresso sm:text-6xl">
-            {t('how.hero.title')}
+            Simple Setup. Zero Frustration.
           </h1>
           {/* AEO Optimized Summary Block */}
           <div className="rounded-2xl bg-white p-6 shadow-sm border border-black/5 text-left md:text-center">
             <p className="text-lg text-kasama-espresso font-medium leading-relaxed">
-              {t('how.hero.desc')}
+              Setting up Kasama PH is designed to be handled entirely by the family member remotely. You configure the health data and preferences on your phone, and generate a simple QR code. Your parent just scans it to instantly log in and configure their device.
             </p>
           </div>
         </FadeIn>
@@ -71,10 +69,10 @@ export default function HowItWorksPage() {
       <Section className="bg-white">
         <FadeIn className="mb-16 text-center space-y-4">
           <h2 className="text-3xl font-bold tracking-tight text-kasama-espresso sm:text-4xl">
-            {t('how.timeline.title')}
+            The Onboarding Journey
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-kasama-muted">
-            {t('how.timeline.desc')}
+            We removed passwords and complicated menus for our seniors. Here is how the family sets it up in four easy steps.
           </p>
         </FadeIn>
 
@@ -86,12 +84,12 @@ export default function HowItWorksPage() {
                 <div className="absolute -left-[21px] flex h-10 w-10 items-center justify-center rounded-full bg-kasama-primary text-white shadow-md ring-4 ring-white">
                   <UserPlus className="h-5 w-5" aria-hidden="true" />
                 </div>
-                <Card>
+                <Card className="card-soft">
                   <CardHeader>
-                    <div className="text-sm font-bold text-kasama-primary uppercase tracking-wider mb-1">{t('how.step1.label')}</div>
-                    <CardTitle>{t('how.step1.title')}</CardTitle>
+                    <div className="text-sm font-bold text-kasama-primary uppercase tracking-wider mb-1">Step 1</div>
+                    <CardTitle>Create Family Account</CardTitle>
                     <CardDescription>
-                      {t('how.step1.desc')}
+                      The primary caregiver (like Leo or Annie) downloads the app and creates the main family account. This acts as the central hub for all alerts and settings.
                     </CardDescription>
                   </CardHeader>
                 </Card>
@@ -104,12 +102,12 @@ export default function HowItWorksPage() {
                 <div className="absolute -left-[21px] flex h-10 w-10 items-center justify-center rounded-full bg-kasama-secondary text-white shadow-md ring-4 ring-white">
                   <HeartPulse className="h-5 w-5" aria-hidden="true" />
                 </div>
-                <Card>
+                <Card className="card-soft">
                   <CardHeader>
-                    <div className="text-sm font-bold text-kasama-secondary uppercase tracking-wider mb-1">{t('how.step2.label')}</div>
-                    <CardTitle>{t('how.step2.title')}</CardTitle>
+                    <div className="text-sm font-bold text-kasama-secondary uppercase tracking-wider mb-1">Step 2</div>
+                    <CardTitle>Setup Senior Profile & Health</CardTitle>
                     <CardDescription>
-                      {t('how.step2.desc')}
+                      Add Lola or Lolo&apos;s details. Input their daily medicine schedule, doctor&apos;s contact information, and emergency hotlines. All of this is done remotely by the family member.
                     </CardDescription>
                   </CardHeader>
                 </Card>
@@ -122,12 +120,12 @@ export default function HowItWorksPage() {
                 <div className="absolute -left-[21px] flex h-10 w-10 items-center justify-center rounded-full bg-kasama-espresso text-white shadow-md ring-4 ring-white">
                   <ShieldCheck className="h-5 w-5" aria-hidden="true" />
                 </div>
-                <Card>
+                <Card className="card-soft">
                   <CardHeader>
-                    <div className="text-sm font-bold text-kasama-espresso uppercase tracking-wider mb-1">{t('how.step3.label')}</div>
-                    <CardTitle>{t('how.step3.title')}</CardTitle>
+                    <div className="text-sm font-bold text-kasama-espresso uppercase tracking-wider mb-1">Step 3</div>
+                    <CardTitle>Preferences & Consent</CardTitle>
                     <CardDescription>
-                      {t('how.step3.desc')}
+                      Adjust the app&apos;s text size, volume, and language preferences (e.g., Tagalog or English). Review and agree to the privacy and location tracking consents required for Bantay SOS.
                     </CardDescription>
                   </CardHeader>
                 </Card>
@@ -140,12 +138,12 @@ export default function HowItWorksPage() {
                 <div className="absolute -left-[21px] flex h-10 w-10 items-center justify-center rounded-full bg-kasama-primary text-white shadow-md ring-4 ring-white">
                   <QrCode className="h-5 w-5" aria-hidden="true" />
                 </div>
-                <Card>
+                <Card className="card-soft">
                   <CardHeader>
-                    <div className="text-sm font-bold text-kasama-primary uppercase tracking-wider mb-1">{t('how.step4.label')}</div>
-                    <CardTitle>{t('how.step4.title')}</CardTitle>
+                    <div className="text-sm font-bold text-kasama-primary uppercase tracking-wider mb-1">Step 4</div>
+                    <CardTitle>QR Code Generation</CardTitle>
                     <CardDescription>
-                      {t('how.step4.desc')}
+                      The app generates a unique, secure QR code. Print it out or show it on your screen. Lola or Lolo simply opens their camera, scans the code, and their device is instantly configured and logged in. No typing required.
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
@@ -174,10 +172,10 @@ export default function HowItWorksPage() {
           <FadeIn direction="right" className="space-y-8">
             <div className="space-y-4">
               <h2 className="text-3xl font-bold tracking-tight text-kasama-espresso sm:text-4xl">
-                {t('how.pwa.title')}
+                No App Store Needed
               </h2>
               <p className="text-lg text-kasama-muted">
-                {t('how.pwa.desc')}
+                Kasama PH is built as a Progressive Web App (PWA). This means it doesn&apos;t take up heavy storage space and never requires manual updates from the App Store or Google Play.
               </p>
             </div>
 
@@ -187,9 +185,9 @@ export default function HowItWorksPage() {
                   <Smartphone className="h-6 w-6" aria-hidden="true" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-kasama-espresso">{t('how.pwa.1.title')}</h3>
+                  <h3 className="text-xl font-bold text-kasama-espresso">Add to Home Screen</h3>
                   <p className="mt-2 text-kasama-muted">
-                    {t('how.pwa.1.desc')}
+                    Just tap &quot;Add to Home Screen&quot; from your browser. It installs instantly and looks exactly like a native app.
                   </p>
                 </div>
               </li>
@@ -215,15 +213,15 @@ export default function HowItWorksPage() {
       <Section className="bg-white border-t border-black/5">
         <FadeIn className="mx-auto max-w-3xl text-center space-y-8">
           <h2 className="text-4xl font-bold tracking-tight text-kasama-espresso sm:text-5xl">
-            {t('how.cta.title')}
+            Ready to simplify their daily routine?
           </h2>
           <p className="text-xl text-kasama-muted">
-            {t('how.cta.desc')}
+            Join the waitlist today and get early access to the easiest caregiving app for Filipino families.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link href="/waitlist" tabIndex={-1}>
               <Button size="lg" className="w-full sm:w-auto text-lg px-10 h-14 shadow-[0_8px_20px_rgba(255,113,91,0.4)]">
-                {t('how.cta.button')}
+                Join Waitlist
               </Button>
             </Link>
           </div>

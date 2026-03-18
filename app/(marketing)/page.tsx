@@ -7,6 +7,7 @@ import { Section } from "@/components/layout/Section"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { FadeIn, Float } from "@/components/animations/FadeIn"
+import { FeatureCard } from "@/components/animations/FeatureCard"
 
 export const metadata: Metadata = {
   title: 'Kasama PH | Ang Kaibigan ng Lola at Lolo',
@@ -176,80 +177,86 @@ export default function LandingPage() {
         <div className="grid gap-8 md:grid-cols-3">
           {/* Feature 1: Promise Protocol */}
           <FadeIn delay={0.1} className="h-full">
-            <Card className="flex flex-col h-full">
-              <CardHeader>
-                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-kasama-primary/10 text-kasama-primary">
-                  <HeartPulse className="h-8 w-8" aria-hidden="true" />
-                </div>
-                <CardTitle>Promise Protocol</CardTitle>
-                <CardDescription>
-                  A medicine reminder for seniors that sounds like a family member talking. Record your own voice to remind them to take their daily meds.
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="mt-auto pt-6">
-                <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-black/5 bg-kasama-cream">
-                  <Image
-                    src="/images/kasama/kasama-promise-protocol-reminder.webp"
-                    alt="Lola Zeny interacting with the Promise Protocol medicine reminder"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
-                  />
-                </div>
-              </CardContent>
-            </Card>
+            <FeatureCard className="h-full">
+              <Card className="flex flex-col h-full card-soft">
+                <CardHeader>
+                  <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-kasama-primary/10 text-kasama-primary">
+                    <HeartPulse className="h-8 w-8" aria-hidden="true" />
+                  </div>
+                  <CardTitle>Promise Protocol</CardTitle>
+                  <CardDescription>
+                    A medicine reminder for seniors that sounds like a family member talking. Record your own voice to remind them to take their daily meds.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="mt-auto pt-6">
+                  <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-black/5 bg-kasama-cream">
+                    <Image
+                      src="/images/kasama/kasama-promise-protocol-reminder.webp"
+                      alt="Lola Zeny interacting with the Promise Protocol medicine reminder"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
+                    />
+                  </div>
+                </CardContent>
+              </Card>
+            </FeatureCard>
           </FadeIn>
 
           {/* Feature 2: Bantay SOS */}
           <FadeIn delay={0.2} className="h-full">
-            <Card className="flex flex-col h-full">
-              <CardHeader>
-                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-kasama-secondary/10 text-kasama-secondary">
-                  <ShieldAlert className="h-8 w-8" aria-hidden="true" />
-                </div>
-                <CardTitle>Bantay SOS</CardTitle>
-                <CardDescription>
-                  A senior safety alert app feature. Pressing the large SOS button sends an instant alert with GPS location to the family.
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="mt-auto pt-6">
-                <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-black/5 bg-kasama-cream">
-                  <Image
-                    src="/images/kasama/kasama-bantay-sos-emergency.webp"
-                    alt="Leo receiving an urgent Bantay SOS alert on his phone"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
-                  />
-                </div>
-              </CardContent>
-            </Card>
+            <FeatureCard className="h-full">
+              <Card className="flex flex-col h-full card-soft">
+                <CardHeader>
+                  <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-kasama-secondary/10 text-kasama-secondary">
+                    <ShieldAlert className="h-8 w-8" aria-hidden="true" />
+                  </div>
+                  <CardTitle>Bantay SOS</CardTitle>
+                  <CardDescription>
+                    A senior safety alert app feature. Pressing the large SOS button sends an instant alert with GPS location to the family.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="mt-auto pt-6">
+                  <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-black/5 bg-kasama-cream">
+                    <Image
+                      src="/images/kasama/kasama-bantay-sos-emergency.webp"
+                      alt="Leo receiving an urgent Bantay SOS alert on his phone"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
+                    />
+                  </div>
+                </CardContent>
+              </Card>
+            </FeatureCard>
           </FadeIn>
 
           {/* Feature 3: Legacy Vault */}
           <FadeIn delay={0.3} className="h-full">
-            <Card className="flex flex-col h-full">
-              <CardHeader>
-                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-kasama-espresso/10 text-kasama-espresso">
-                  <Mic className="h-8 w-8" aria-hidden="true" />
-                </div>
-                <CardTitle>Legacy Vault</CardTitle>
-                <CardDescription>
-                  Seniors can easily record voice memories and stories for future generations, preserving family history.
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="mt-auto pt-6">
-                <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-black/5 bg-kasama-cream">
-                  <Image
-                    src="/images/kasama/kasama-voice-memory-story.webp"
-                    alt="Lolo Boy recording a story into the Legacy Vault"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
-                  />
-                </div>
-              </CardContent>
-            </Card>
+            <FeatureCard className="h-full">
+              <Card className="flex flex-col h-full card-soft">
+                <CardHeader>
+                  <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-kasama-espresso/10 text-kasama-espresso">
+                    <Mic className="h-8 w-8" aria-hidden="true" />
+                  </div>
+                  <CardTitle>Legacy Vault</CardTitle>
+                  <CardDescription>
+                    Seniors can easily record voice memories and stories for future generations, preserving family history.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="mt-auto pt-6">
+                  <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-black/5 bg-kasama-cream">
+                    <Image
+                      src="/images/kasama/kasama-voice-memory-story.webp"
+                      alt="Lolo Boy recording a story into the Legacy Vault"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
+                    />
+                  </div>
+                </CardContent>
+              </Card>
+            </FeatureCard>
           </FadeIn>
         </div>
 
@@ -276,7 +283,7 @@ export default function LandingPage() {
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           <FadeIn delay={0.1} className="h-full">
-            <Card className="flex flex-col h-full text-center p-6">
+            <Card className="flex flex-col h-full text-center p-6 card-soft">
               <CardTitle className="text-xl mb-2">OFWs caring from afar</CardTitle>
               <CardDescription className="text-base">
                 Stay connected and ensure your parents are safe, no matter the time zone.
@@ -284,7 +291,7 @@ export default function LandingPage() {
             </Card>
           </FadeIn>
           <FadeIn delay={0.2} className="h-full">
-            <Card className="flex flex-col h-full text-center p-6">
+            <Card className="flex flex-col h-full text-center p-6 card-soft">
               <CardTitle className="text-xl mb-2">Adult children managing parents&apos; health</CardTitle>
               <CardDescription className="text-base">
                 Easily coordinate medicine reminders and doctor appointments.
@@ -292,7 +299,7 @@ export default function LandingPage() {
             </Card>
           </FadeIn>
           <FadeIn delay={0.3} className="h-full">
-            <Card className="flex flex-col h-full text-center p-6">
+            <Card className="flex flex-col h-full text-center p-6 card-soft">
               <CardTitle className="text-xl mb-2">Seniors who want to stay independent</CardTitle>
               <CardDescription className="text-base">
                 A simple, respectful interface that empowers seniors without overwhelming them.
@@ -300,7 +307,7 @@ export default function LandingPage() {
             </Card>
           </FadeIn>
           <FadeIn delay={0.4} className="h-full">
-            <Card className="flex flex-col h-full text-center p-6">
+            <Card className="flex flex-col h-full text-center p-6 card-soft">
               <CardTitle className="text-xl mb-2">Families who want to preserve memories</CardTitle>
               <CardDescription className="text-base">
                 Capture and save precious stories and voice notes for future generations.
@@ -321,85 +328,93 @@ export default function LandingPage() {
           </p>
         </FadeIn>
 
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4 pt-20">
           {/* Lola Zeny */}
           <FadeIn direction="up" delay={0.1} className="h-full">
-            <Card className="flex flex-col h-full text-center items-center p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-              <div className="relative aspect-square w-32 overflow-hidden rounded-full border-4 border-white shadow-md bg-kasama-primary/10 mb-4">
+            <div className="flex flex-col items-center text-center space-y-4">
+              <div className="relative aspect-square w-full max-w-[160px] overflow-visible rounded-full border-4 border-white shadow-lg bg-kasama-primary/10 -mt-20 z-10">
                 <Image
-                  src="/images/kasama/lola-zeny.png"
+                  src="/images/kasama/image_41.png"
                   alt="Lola Zeny"
                   fill
-                  className="object-cover"
-                  sizes="128px"
+                  className="object-cover rounded-full"
+                  sizes="(max-width: 768px) 50vw, 160px"
                 />
               </div>
-              <CardTitle className="text-xl mb-1">Lola Zeny</CardTitle>
-              <p className="text-xs font-bold text-kasama-primary uppercase tracking-wider mb-3">The Heart</p>
-              <CardDescription className="text-sm">
-                Represents the loving Filipino grandmother who wants to stay healthy and connected with family.
-              </CardDescription>
-            </Card>
+              <div className="card-soft p-6 w-full mt-10">
+                <CardTitle className="text-xl mb-1">Lola Zeny</CardTitle>
+                <p className="text-xs font-bold text-kasama-primary uppercase tracking-wider mb-3">The Heart</p>
+                <CardDescription className="text-sm">
+                  Represents the loving Filipino grandmother who wants to stay healthy and connected with family.
+                </CardDescription>
+              </div>
+            </div>
           </FadeIn>
 
           {/* Leo */}
           <FadeIn direction="up" delay={0.2} className="h-full">
-            <Card className="flex flex-col h-full text-center items-center p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-              <div className="relative aspect-square w-32 overflow-hidden rounded-full border-4 border-white shadow-md bg-kasama-secondary/10 mb-4">
+            <div className="flex flex-col items-center text-center space-y-4">
+              <div className="relative aspect-square w-full max-w-[160px] overflow-visible rounded-full border-4 border-white shadow-lg bg-kasama-secondary/10 -mt-20 z-10">
                 <Image
-                  src="/images/kasama/leo.png"
+                  src="/images/kasama/image_53.png"
                   alt="Leo"
                   fill
-                  className="object-cover"
-                  sizes="128px"
+                  className="object-cover rounded-full"
+                  sizes="(max-width: 768px) 50vw, 160px"
                 />
               </div>
-              <CardTitle className="text-xl mb-1">Leo</CardTitle>
-              <p className="text-xs font-bold text-kasama-secondary uppercase tracking-wider mb-3">The Protector</p>
-              <CardDescription className="text-sm">
-                The son who watches over his mother even when he is far away.
-              </CardDescription>
-            </Card>
+              <div className="card-soft p-6 w-full mt-10">
+                <CardTitle className="text-xl mb-1">Leo</CardTitle>
+                <p className="text-xs font-bold text-kasama-secondary uppercase tracking-wider mb-3">The Protector</p>
+                <CardDescription className="text-sm">
+                  The son who watches over his mother even when he is far away.
+                </CardDescription>
+              </div>
+            </div>
           </FadeIn>
 
           {/* Lolo Boy */}
           <FadeIn direction="up" delay={0.3} className="h-full">
-            <Card className="flex flex-col h-full text-center items-center p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-              <div className="relative aspect-square w-32 overflow-hidden rounded-full border-4 border-white shadow-md bg-kasama-espresso/10 mb-4">
+            <div className="flex flex-col items-center text-center space-y-4">
+              <div className="relative aspect-square w-full max-w-[160px] overflow-visible rounded-full border-4 border-white shadow-lg bg-kasama-espresso/10 -mt-20 z-10">
                 <Image
-                  src="/images/kasama/lolo-boy.png"
+                  src="/images/kasama/image_42.png"
                   alt="Lolo Boy"
                   fill
-                  className="object-cover"
-                  sizes="128px"
+                  className="object-cover rounded-full"
+                  sizes="(max-width: 768px) 50vw, 160px"
                 />
               </div>
-              <CardTitle className="text-xl mb-1">Lolo Boy</CardTitle>
-              <p className="text-xs font-bold text-kasama-primary uppercase tracking-wider mb-3">The Energizer</p>
-              <CardDescription className="text-sm">
-                Full of life, stories, and movement.
-              </CardDescription>
-            </Card>
+              <div className="card-soft p-6 w-full mt-10">
+                <CardTitle className="text-xl mb-1">Lolo Boy</CardTitle>
+                <p className="text-xs font-bold text-kasama-primary uppercase tracking-wider mb-3">The Energizer</p>
+                <CardDescription className="text-sm">
+                  Full of life, stories, and movement.
+                </CardDescription>
+              </div>
+            </div>
           </FadeIn>
 
           {/* Annie */}
           <FadeIn direction="up" delay={0.4} className="h-full">
-            <Card className="flex flex-col h-full text-center items-center p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-              <div className="relative aspect-square w-32 overflow-hidden rounded-full border-4 border-white shadow-md bg-kasama-primary/10 mb-4">
+            <div className="flex flex-col items-center text-center space-y-4">
+              <div className="relative aspect-square w-full max-w-[160px] overflow-visible rounded-full border-4 border-white shadow-lg bg-kasama-primary/10 -mt-20 z-10">
                 <Image
-                  src="/images/kasama/annie.png"
+                  src="/images/kasama/image_44.png"
                   alt="Annie"
                   fill
-                  className="object-cover"
-                  sizes="128px"
+                  className="object-cover rounded-full"
+                  sizes="(max-width: 768px) 50vw, 160px"
                 />
               </div>
-              <CardTitle className="text-xl mb-1">Annie</CardTitle>
-              <p className="text-xs font-bold text-kasama-secondary uppercase tracking-wider mb-3">The Guide</p>
-              <CardDescription className="text-sm">
-                Helps families set up and manage the Kasama experience.
-              </CardDescription>
-            </Card>
+              <div className="card-soft p-6 w-full mt-10">
+                <CardTitle className="text-xl mb-1">Annie</CardTitle>
+                <p className="text-xs font-bold text-kasama-secondary uppercase tracking-wider mb-3">The Guide</p>
+                <CardDescription className="text-sm">
+                  Helps families set up and manage the Kasama experience.
+                </CardDescription>
+              </div>
+            </div>
           </FadeIn>
         </div>
       </Section>

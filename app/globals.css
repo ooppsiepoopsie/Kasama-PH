@@ -1,5 +1,6 @@
 @import "tailwindcss";
-@import "tw-animate-css";
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
 
 @theme {
   /* Kasama PH Color Palette */
@@ -9,11 +10,15 @@
   --color-kasama-secondary-hover: #218276;
   --color-kasama-cream: #FFFCF9; /* Warm Cream Background */
   --color-kasama-espresso: #2B2118; /* Deep Espresso Text */
-  --color-kasama-muted: #8A7D72; /* Warm Gray Muted Text */
+  --color-kasama-muted: #70655B; /* Darkened for better contrast */
 
   /* Typography */
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-quicksand), ui-sans-serif, system-ui, sans-serif;
+
+  /* Custom Soft Shadows */
+  --shadow-soft: 0 10px 40px -10px rgba(43, 33, 24, 0.08);
+  --shadow-bouncy: 0 20px 50px -15px rgba(43, 33, 24, 0.12);
 }
 
 @layer base {
@@ -23,6 +28,18 @@
   
   h1, h2, h3, h4, h5, h6 {
     @apply font-display tracking-tight text-kasama-espresso;
+  }
+
+  /* Soft border utility for cards */
+  .card-soft {
+    @apply bg-white border border-black/5 rounded-3xl;
+    box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.1), 0 10px 10px -10px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  button {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
 
   html[data-scroll-behavior="smooth"] {

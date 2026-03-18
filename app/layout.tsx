@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
-import { Inter, Nunito } from 'next/font/google';
+import { Inter, Quicksand } from 'next/font/google';
 import './globals.css'; // Global styles
-import { LanguageProvider } from '@/lib/i18n';
 
 // Body/UI Text
 const inter = Inter({
@@ -11,9 +10,9 @@ const inter = Inter({
 });
 
 // Display/Headings
-const nunito = Nunito({
+const quicksand = Quicksand({
   subsets: ['latin'],
-  variable: '--font-nunito',
+  variable: '--font-quicksand',
   display: 'swap',
 });
 
@@ -77,11 +76,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${nunito.variable}`} data-scroll-behavior="smooth">
+    <html lang="en" className={`${inter.variable} ${quicksand.variable}`} data-scroll-behavior="smooth">
       <body className="min-h-screen bg-kasama-cream text-kasama-espresso font-sans antialiased selection:bg-kasama-primary/20" suppressHydrationWarning>
-        <LanguageProvider>
-          {children}
-        </LanguageProvider>
+        {children}
       </body>
     </html>
   );

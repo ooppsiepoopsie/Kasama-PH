@@ -1,20 +1,13 @@
+'use client';
+
 import * as React from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { Metadata } from "next"
 import { Heart, Users, Home, ArrowRight } from "lucide-react"
 import { Section } from "@/components/layout/Section"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { FadeIn, Float } from "@/components/animations/FadeIn"
-
-export const metadata: Metadata = {
-  title: "About Us | Our Mission & Cultural Pillars",
-  description: "Learn about the mission behind Kasama PH, our cultural pillars of Pagmamahal, Bayanihan, and Paggalang, and the families we serve.",
-  alternates: {
-    canonical: '/about',
-  },
-}
 
 export default function AboutPage() {
   const jsonLd = {
@@ -66,7 +59,7 @@ export default function AboutPage() {
 
         <div className="grid gap-8 md:grid-cols-3">
           <FadeIn delay={0.1} className="h-full">
-            <Card className="flex flex-col h-full text-center items-center p-6">
+            <Card className="flex flex-col h-full text-center items-center p-6 card-soft">
               <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-kasama-primary/10 text-kasama-primary">
                 <Heart className="h-8 w-8" aria-hidden="true" />
               </div>
@@ -78,7 +71,7 @@ export default function AboutPage() {
           </FadeIn>
 
           <FadeIn delay={0.2} className="h-full">
-            <Card className="flex flex-col h-full text-center items-center p-6">
+            <Card className="flex flex-col h-full text-center items-center p-6 card-soft">
               <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-kasama-secondary/10 text-kasama-secondary">
                 <Users className="h-8 w-8" aria-hidden="true" />
               </div>
@@ -90,7 +83,7 @@ export default function AboutPage() {
           </FadeIn>
 
           <FadeIn delay={0.3} className="h-full">
-            <Card className="flex flex-col h-full text-center items-center p-6">
+            <Card className="flex flex-col h-full text-center items-center p-6 card-soft">
               <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-kasama-espresso/10 text-kasama-espresso">
                 <Home className="h-8 w-8" aria-hidden="true" />
               </div>
@@ -114,19 +107,19 @@ export default function AboutPage() {
           </p>
         </FadeIn>
 
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4 pt-20">
           {/* Lola Zeny */}
           <FadeIn delay={0.1} className="flex flex-col items-center text-center space-y-4">
-            <div className="relative aspect-square w-full max-w-[200px] overflow-hidden rounded-full border-4 border-white shadow-lg bg-kasama-primary/10">
+            <div className="relative aspect-square w-full max-w-[160px] overflow-visible rounded-full border-4 border-white shadow-lg bg-kasama-primary/10 -mt-20 z-10">
               <Image
-                src="/images/kasama/lola-zeny.png"
+                src="/images/kasama/image_41.png"
                 alt="Lola Zeny, a warm and smiling Filipino grandmother"
                 fill
-                className="object-cover"
-                sizes="(max-width: 768px) 50vw, 200px"
+                className="object-cover rounded-full"
+                sizes="(max-width: 768px) 50vw, 160px"
               />
             </div>
-            <div>
+            <div className="card-soft p-6 w-full mt-10">
               <h3 className="text-xl font-bold text-kasama-espresso">Lola Zeny</h3>
               <p className="text-sm font-semibold text-kasama-primary uppercase tracking-wider">Senior User</p>
               <p className="mt-2 text-kasama-muted text-sm">
@@ -137,16 +130,16 @@ export default function AboutPage() {
 
           {/* Leo */}
           <FadeIn delay={0.2} className="flex flex-col items-center text-center space-y-4">
-            <div className="relative aspect-square w-full max-w-[200px] overflow-hidden rounded-full border-4 border-white shadow-lg bg-kasama-secondary/10">
+            <div className="relative aspect-square w-full max-w-[160px] overflow-visible rounded-full border-4 border-white shadow-lg bg-kasama-secondary/10 -mt-20 z-10">
               <Image
-                src="/images/kasama/leo.png"
+                src="/images/kasama/image_53.png"
                 alt="Leo, a caring Filipino son working in an office"
                 fill
-                className="object-cover"
-                sizes="(max-width: 768px) 50vw, 200px"
+                className="object-cover rounded-full"
+                sizes="(max-width: 768px) 50vw, 160px"
               />
             </div>
-            <div>
+            <div className="card-soft p-6 w-full mt-10">
               <h3 className="text-xl font-bold text-kasama-espresso">Leo</h3>
               <p className="text-sm font-semibold text-kasama-secondary uppercase tracking-wider">Family Partner</p>
               <p className="mt-2 text-kasama-muted text-sm">
@@ -157,16 +150,16 @@ export default function AboutPage() {
 
           {/* Lolo Boy */}
           <FadeIn delay={0.3} className="flex flex-col items-center text-center space-y-4">
-            <div className="relative aspect-square w-full max-w-[200px] overflow-hidden rounded-full border-4 border-white shadow-lg bg-kasama-espresso/10">
+            <div className="relative aspect-square w-full max-w-[160px] overflow-visible rounded-full border-4 border-white shadow-lg bg-kasama-espresso/10 -mt-20 z-10">
               <Image
-                src="/images/kasama/lolo-boy.png"
+                src="/images/kasama/image_42.png"
                 alt="Lolo Boy, a cheerful Filipino grandfather"
                 fill
-                className="object-cover"
-                sizes="(max-width: 768px) 50vw, 200px"
+                className="object-cover rounded-full"
+                sizes="(max-width: 768px) 50vw, 160px"
               />
             </div>
-            <div>
+            <div className="card-soft p-6 w-full mt-10">
               <h3 className="text-xl font-bold text-kasama-espresso">Lolo Boy</h3>
               <p className="text-sm font-semibold text-kasama-primary uppercase tracking-wider">Senior User</p>
               <p className="mt-2 text-kasama-muted text-sm">
@@ -177,16 +170,16 @@ export default function AboutPage() {
 
           {/* Annie */}
           <FadeIn delay={0.4} className="flex flex-col items-center text-center space-y-4">
-            <div className="relative aspect-square w-full max-w-[200px] overflow-hidden rounded-full border-4 border-white shadow-lg bg-kasama-primary/10">
+            <div className="relative aspect-square w-full max-w-[160px] overflow-visible rounded-full border-4 border-white shadow-lg bg-kasama-primary/10 -mt-20 z-10">
               <Image
-                src="/images/kasama/annie.png"
+                src="/images/kasama/image_44.png"
                 alt="Annie, a supportive Filipino daughter living abroad"
                 fill
-                className="object-cover"
-                sizes="(max-width: 768px) 50vw, 200px"
+                className="object-cover rounded-full"
+                sizes="(max-width: 768px) 50vw, 160px"
               />
             </div>
-            <div>
+            <div className="card-soft p-6 w-full mt-10">
               <h3 className="text-xl font-bold text-kasama-espresso">Annie</h3>
               <p className="text-sm font-semibold text-kasama-secondary uppercase tracking-wider">Family Partner</p>
               <p className="mt-2 text-kasama-muted text-sm">
