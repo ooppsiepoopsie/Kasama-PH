@@ -2,8 +2,9 @@
 
 import { useLanguage } from './LanguageProvider';
 import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 
-export const LanguageSwitcher = () => {
+export const LanguageSwitcher = ({ className }: { className?: string }) => {
   const { language, setLanguage } = useLanguage();
 
   return (
@@ -11,7 +12,7 @@ export const LanguageSwitcher = () => {
       variant="ghost"
       size="sm"
       onClick={() => setLanguage(language === 'en' ? 'tl' : 'en')}
-      className="font-bold"
+      className={cn("font-bold", className)}
     >
       {language === 'en' ? 'EN' : 'TL'}
     </Button>

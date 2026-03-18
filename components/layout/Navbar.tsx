@@ -141,6 +141,9 @@ export function Navbar() {
               );
             })}
             <div className="pt-4">
+              <LanguageSwitcher className="w-full justify-center" />
+            </div>
+            <div className="pt-4">
               <Link href="/waitlist" tabIndex={-1} className="block w-full" onClick={() => setIsMobileMenuOpen(false)}>
                 <Button className="w-full">Join Waitlist</Button>
               </Link>
