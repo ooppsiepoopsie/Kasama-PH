@@ -106,7 +106,7 @@ export default function FeaturesPage() {
           <FadeIn direction="left" delay={0.2} className="relative aspect-square w-full rounded-3xl bg-kasama-cream shadow-xl overflow-hidden border border-black/5">
             <Float>
               <Image
-                src="/images/kasama/kasama-bantay-sos-emergency.webp"
+                src="/images/kasama/kasama-promise-protocol-reminder.webp"
                 alt="Lola Zeny interacting with the Promise Protocol on her screen, while a floating UI bubble shows Leo receiving the update."
                 fill
                 className="object-cover"
@@ -124,8 +124,8 @@ export default function FeaturesPage() {
           <FadeIn direction="right" className="order-2 lg:order-1 relative aspect-square w-full rounded-3xl bg-white shadow-xl overflow-hidden border border-black/5">
             <Float delay={0.5}>
               <Image
-                src="/images/kasama/kasama-family-video-checkin.webp"
-                alt="A warm family video check-in showing Lola Zeny and her family connecting remotely through the Kasama app."
+                src="/images/kasama/kasama-voice-memory-story.webp"
+                alt="Lolo Boy recording a story into the Legacy Vault"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"

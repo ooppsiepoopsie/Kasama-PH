@@ -119,7 +119,7 @@ export default function AboutPage() {
           <FadeIn delay={0.1} className="flex flex-col items-center text-center space-y-4">
             <div className="relative aspect-square w-full max-w-[200px] overflow-hidden rounded-full border-4 border-white shadow-lg bg-kasama-primary/10">
               <Image
-                src="/images/kasama/lolo-boy-lola-zeny-happy.webp"
+                src="/images/kasama/lola-zeny.png"
                 alt="Lola Zeny, a warm and smiling Filipino grandmother"
                 fill
                 className="object-cover"
@@ -139,7 +139,7 @@ export default function AboutPage() {
           <FadeIn delay={0.2} className="flex flex-col items-center text-center space-y-4">
             <div className="relative aspect-square w-full max-w-[200px] overflow-hidden rounded-full border-4 border-white shadow-lg bg-kasama-secondary/10">
               <Image
-                src="/images/kasama/annie-leo-family-support.webp"
+                src="/images/kasama/leo.png"
                 alt="Leo, a caring Filipino son working in an office"
                 fill
                 className="object-cover"
@@ -159,7 +159,7 @@ export default function AboutPage() {
           <FadeIn delay={0.3} className="flex flex-col items-center text-center space-y-4">
             <div className="relative aspect-square w-full max-w-[200px] overflow-hidden rounded-full border-4 border-white shadow-lg bg-kasama-espresso/10">
               <Image
-                src="/images/kasama/kasama-whole-fam.webp"
+                src="/images/kasama/lolo-boy.png"
                 alt="Lolo Boy, a cheerful Filipino grandfather"
                 fill
                 className="object-cover"
@@ -179,7 +179,7 @@ export default function AboutPage() {
           <FadeIn delay={0.4} className="flex flex-col items-center text-center space-y-4">
             <div className="relative aspect-square w-full max-w-[200px] overflow-hidden rounded-full border-4 border-white shadow-lg bg-kasama-primary/10">
               <Image
-                src="/images/kasama/kasama-preparing-for-love.webp"
+                src="/images/kasama/annie.png"
                 alt="Annie, a supportive Filipino daughter living abroad"
                 fill
                 className="object-cover"

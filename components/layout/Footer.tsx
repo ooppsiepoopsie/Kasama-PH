@@ -3,9 +3,23 @@ import Link from "next/link"
 import Image from "next/image"
 import { Heart } from "lucide-react"
 import { FOOTER_LINKS, SITE_CONFIG } from "@/lib/constants"
+import { useLanguage } from "@/lib/i18n"
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
+  const { t } = useLanguage()
+
+  // Helper to get translation key for footer links
+  const getTranslationKey = (label: string) => {
+    const keyMap: Record<string, string> = {
+      "Home": "nav.home",
+      "Features": "nav.features",
+      "How It Works": "nav.howItWorks",
+      "About Us": "nav.about",
+      "Waitlist": "nav.waitlist"
+    };
+    return keyMap[label] || label;
+  };
 
   return (
     <footer className="border-t border-black/5 bg-white">
@@ -52,7 +66,7 @@ export function Footer() {
                 className="rounded-md px-2 py-1 text-base font-medium text-kasama-espresso transition-colors hover:text-kasama-primary focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-kasama-secondary"
                 data-scroll-behavior="smooth"
               >
-                {link.label}
+                {t(getTranslationKey(link.label) as any)}
               </Link>
             ))}
           </nav>
@@ -61,10 +75,10 @@ export function Footer() {
         {/* Copyright & Bottom Bar */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-black/5 pt-8 md:flex-row">
           <p className="text-center text-sm text-kasama-muted md:text-left">
-            &copy; {currentYear} {SITE_CONFIG.name}. All rights reserved.
+            &copy; {currentYear} {SITE_CONFIG.name}. {t('footer.rights')}
           </p>
           <p className="text-center text-sm text-kasama-muted md:text-right">
-            Designed with ❤️ for Filipino families.
+            {t('footer.designed')} ❤️
           </p>
         </div>
       </div>

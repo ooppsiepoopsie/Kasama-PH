@@ -1,71 +1,44 @@
+'use client'
+
 import * as React from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { Metadata } from "next"
 import { ArrowRight, HeartPulse, ShieldAlert, Mic, CheckCircle2 } from "lucide-react"
 import { Section } from "@/components/layout/Section"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { FadeIn, Float } from "@/components/animations/FadeIn"
+import { useLanguage } from "@/lib/i18n"
 
-export const metadata: Metadata = {
-  title: 'Kasama PH | Ang Kaibigan ng Lola at Lolo',
-  description: 'A premium elderly care app for Filipino families, featuring medicine reminders, emergency alerts, and family connection.',
-  alternates: {
-    canonical: '/',
-  },
-}
-
-export default function LandingPage() {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Kasama PH",
-    "description": "Elderly care app for Filipino families featuring medicine reminders, emergency alerts, and family connection tools.",
-    "applicationCategory": "HealthApplication",
-    "operatingSystem": "Web, Android, iOS",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "PHP"
-    },
-    "author": {
-      "@type": "Organization",
-      "name": "Kasama PH",
-      "url": "https://www.kasama.ph"
-    }
-  };
+export function LandingContent() {
+  const { t } = useLanguage();
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
       {/* 1. HERO SECTION */}
       <Section className="pt-20 pb-16 md:pt-32 md:pb-24 overflow-hidden relative bg-white">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
           <FadeIn direction="right" className="flex flex-col justify-center space-y-10 text-center lg:text-left">
             <div className="space-y-6">
               <h1 className="text-5xl font-bold tracking-tight text-kasama-espresso sm:text-6xl xl:text-7xl leading-tight">
-                Kasama: Ang Kaibigan ng Lola at Lolo
+                {t('hero.title')}
               </h1>
               <p className="mx-auto max-w-2xl text-xl text-kasama-espresso/80 font-medium lg:mx-0 leading-[1.6]">
-                An app that helps Filipino families care for their elderly parents through medicine reminders, emergency alerts, and daily connection.
+                {t('hero.subtitle')}
               </p>
               <p className="mx-auto max-w-2xl text-lg text-kasama-muted lg:mx-0 leading-[1.6]">
-                Simple lang. Hindi ka nag-iisa, Lo. A comprehensive elderly care app designed for seniors.
+                {t('hero.description')}
               </p>
             </div>
             <div className="flex flex-col gap-4 sm:flex-row sm:justify-center lg:justify-start">
               <Link href="/waitlist" tabIndex={-1}>
                 <Button size="lg" className="w-full sm:w-auto rounded-full px-10 py-7 text-lg shadow-sm hover:shadow-md transition-all">
-                  Join Waitlist
+                  {t('hero.cta.waitlist')}
                 </Button>
               </Link>
               <Link href="/features" tabIndex={-1}>
                 <Button variant="outline" size="lg" className="w-full sm:w-auto rounded-full px-10 py-7 text-lg border-kasama-espresso/10 text-kasama-espresso hover:bg-kasama-espresso/5 transition-all">
-                  See Features
+                  {t('hero.cta.features')}
                 </Button>
               </Link>
             </div>
@@ -97,10 +70,10 @@ export default function LandingPage() {
       <Section className="bg-white">
         <FadeIn className="text-center mb-16 space-y-4">
           <h2 className="text-4xl font-bold tracking-tight text-kasama-espresso sm:text-5xl">
-            Far from home? Kasama namin sila.
+            {t('problem.title')}
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-kasama-muted">
-            Hindi mo kailangang mag-alala. Kahit malayo ang pamilya, may Kasama sila araw-araw.
+            {t('problem.subtitle')}
           </p>
         </FadeIn>
 
@@ -120,7 +93,7 @@ export default function LandingPage() {
               </div>
             </Float>
             <p className="text-center text-kasama-espresso font-medium">
-              &quot;Did Mama take her medicine today?&quot;
+              {t('problem.panel1')}
             </p>
           </FadeIn>
 
@@ -138,7 +111,7 @@ export default function LandingPage() {
               </div>
             </Float>
             <p className="text-center text-kasama-espresso font-medium">
-              &quot;Oh, time for my vitamins! Salamat, Kasama.&quot;
+              {t('problem.panel2')}
             </p>
           </FadeIn>
 
@@ -156,7 +129,7 @@ export default function LandingPage() {
               </div>
             </Float>
             <p className="text-center text-kasama-espresso font-medium">
-              Peace of mind, wherever you are.
+              {t('problem.panel3')}
             </p>
           </FadeIn>
         </div>
@@ -166,10 +139,10 @@ export default function LandingPage() {
       <Section>
         <FadeIn className="mb-16 text-center space-y-4">
           <h2 className="text-4xl font-bold tracking-tight text-kasama-espresso sm:text-5xl">
-            Mga Tampok na Kasama
+            {t('features.title')}
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-kasama-muted">
-            Everything your parents need to stay safe, healthy, and connected, designed specifically for seniors who aren&apos;t tech-savvy.
+            {t('features.subtitle')}
           </p>
         </FadeIn>
 
@@ -181,9 +154,9 @@ export default function LandingPage() {
                 <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-kasama-primary/10 text-kasama-primary">
                   <HeartPulse className="h-8 w-8" aria-hidden="true" />
                 </div>
-                <CardTitle>Promise Protocol</CardTitle>
+                <CardTitle>{t('features.promise.title')}</CardTitle>
                 <CardDescription>
-                  A medicine reminder for seniors that sounds like a family member talking. Record your own voice to remind them to take their daily meds.
+                  {t('features.promise.desc')}
                 </CardDescription>
               </CardHeader>
               <CardContent className="mt-auto pt-6">
@@ -207,9 +180,9 @@ export default function LandingPage() {
                 <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-kasama-secondary/10 text-kasama-secondary">
                   <ShieldAlert className="h-8 w-8" aria-hidden="true" />
                 </div>
-                <CardTitle>Bantay SOS</CardTitle>
+                <CardTitle>{t('features.sos.title')}</CardTitle>
                 <CardDescription>
-                  A senior safety alert app feature. Pressing the large SOS button sends an instant alert with GPS location to the family.
+                  {t('features.sos.desc')}
                 </CardDescription>
               </CardHeader>
               <CardContent className="mt-auto pt-6">
@@ -233,9 +206,9 @@ export default function LandingPage() {
                 <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-kasama-espresso/10 text-kasama-espresso">
                   <Mic className="h-8 w-8" aria-hidden="true" />
                 </div>
-                <CardTitle>Legacy Vault</CardTitle>
+                <CardTitle>{t('features.legacy.title')}</CardTitle>
                 <CardDescription>
-                  Seniors can easily record voice memories and stories for future generations, preserving family history.
+                  {t('features.legacy.desc')}
                 </CardDescription>
               </CardHeader>
               <CardContent className="mt-auto pt-6">
@@ -256,7 +229,7 @@ export default function LandingPage() {
         <FadeIn delay={0.4} className="mt-12 text-center">
           <Link href="/features" tabIndex={-1}>
             <Button variant="outline" size="lg" className="group">
-              Explore all features
+              {t('features.explore')}
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" aria-hidden="true" />
             </Button>
           </Link>
@@ -267,43 +240,43 @@ export default function LandingPage() {
       <Section className="bg-kasama-cream">
         <FadeIn className="mb-16 text-center space-y-4">
           <h2 className="text-3xl font-bold tracking-tight text-kasama-espresso sm:text-4xl">
-            Kasama is made for families like yours
+            {t('who.title')}
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-kasama-muted">
-            Whether you live in the next town or across the world, Kasama helps you provide remote care for elderly parents.
+            {t('who.subtitle')}
           </p>
         </FadeIn>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           <FadeIn delay={0.1} className="h-full">
             <Card className="flex flex-col h-full text-center p-6">
-              <CardTitle className="text-xl mb-2">OFWs caring from afar</CardTitle>
+              <CardTitle className="text-xl mb-2">{t('who.1.title')}</CardTitle>
               <CardDescription className="text-base">
-                Stay connected and ensure your parents are safe, no matter the time zone.
+                {t('who.1.desc')}
               </CardDescription>
             </Card>
           </FadeIn>
           <FadeIn delay={0.2} className="h-full">
             <Card className="flex flex-col h-full text-center p-6">
-              <CardTitle className="text-xl mb-2">Adult children managing parents&apos; health</CardTitle>
+              <CardTitle className="text-xl mb-2">{t('who.2.title')}</CardTitle>
               <CardDescription className="text-base">
-                Easily coordinate medicine reminders and doctor appointments.
+                {t('who.2.desc')}
               </CardDescription>
             </Card>
           </FadeIn>
           <FadeIn delay={0.3} className="h-full">
             <Card className="flex flex-col h-full text-center p-6">
-              <CardTitle className="text-xl mb-2">Seniors who want to stay independent</CardTitle>
+              <CardTitle className="text-xl mb-2">{t('who.3.title')}</CardTitle>
               <CardDescription className="text-base">
-                A simple, respectful interface that empowers seniors without overwhelming them.
+                {t('who.3.desc')}
               </CardDescription>
             </Card>
           </FadeIn>
           <FadeIn delay={0.4} className="h-full">
             <Card className="flex flex-col h-full text-center p-6">
-              <CardTitle className="text-xl mb-2">Families who want to preserve memories</CardTitle>
+              <CardTitle className="text-xl mb-2">{t('who.4.title')}</CardTitle>
               <CardDescription className="text-base">
-                Capture and save precious stories and voice notes for future generations.
+                {t('who.4.desc')}
               </CardDescription>
             </Card>
           </FadeIn>
@@ -314,10 +287,10 @@ export default function LandingPage() {
       <Section className="bg-white">
         <FadeIn className="mb-16 text-center space-y-4">
           <h2 className="text-3xl font-bold tracking-tight text-kasama-espresso sm:text-4xl">
-            Meet the Kasama Family
+            {t('family.title')}
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-kasama-muted">
-            Our characters represent the beautiful diversity of the Filipino family.
+            {t('family.subtitle')}
           </p>
         </FadeIn>
 
@@ -327,17 +300,17 @@ export default function LandingPage() {
             <Card className="flex flex-col h-full text-center items-center p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
               <div className="relative aspect-square w-32 overflow-hidden rounded-full border-4 border-white shadow-md bg-kasama-primary/10 mb-4">
                 <Image
-                  src="/images/kasama/lola-zeny.png"
+                  src="/images/kasama/lolo-boy-lola-zeny-happy.webp"
                   alt="Lola Zeny"
                   fill
                   className="object-cover"
                   sizes="128px"
                 />
               </div>
-              <CardTitle className="text-xl mb-1">Lola Zeny</CardTitle>
-              <p className="text-xs font-bold text-kasama-primary uppercase tracking-wider mb-3">The Heart</p>
+              <CardTitle className="text-xl mb-1">{t('family.zeny.title')}</CardTitle>
+              <p className="text-xs font-bold text-kasama-primary uppercase tracking-wider mb-3">{t('family.zeny.role')}</p>
               <CardDescription className="text-sm">
-                Represents the loving Filipino grandmother who wants to stay healthy and connected with family.
+                {t('family.zeny.desc')}
               </CardDescription>
             </Card>
           </FadeIn>
@@ -347,17 +320,17 @@ export default function LandingPage() {
             <Card className="flex flex-col h-full text-center items-center p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
               <div className="relative aspect-square w-32 overflow-hidden rounded-full border-4 border-white shadow-md bg-kasama-secondary/10 mb-4">
                 <Image
-                  src="/images/kasama/leo.png"
+                  src="/images/kasama/annie-leo-family-support.webp"
                   alt="Leo"
                   fill
                   className="object-cover"
                   sizes="128px"
                 />
               </div>
-              <CardTitle className="text-xl mb-1">Leo</CardTitle>
-              <p className="text-xs font-bold text-kasama-secondary uppercase tracking-wider mb-3">The Protector</p>
+              <CardTitle className="text-xl mb-1">{t('family.leo.title')}</CardTitle>
+              <p className="text-xs font-bold text-kasama-secondary uppercase tracking-wider mb-3">{t('family.leo.role')}</p>
               <CardDescription className="text-sm">
-                The son who watches over his mother even when he is far away.
+                {t('family.leo.desc')}
               </CardDescription>
             </Card>
           </FadeIn>
@@ -367,17 +340,17 @@ export default function LandingPage() {
             <Card className="flex flex-col h-full text-center items-center p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
               <div className="relative aspect-square w-32 overflow-hidden rounded-full border-4 border-white shadow-md bg-kasama-espresso/10 mb-4">
                 <Image
-                  src="/images/kasama/lolo-boy.png"
+                  src="/images/kasama/kasama-whole-fam.webp"
                   alt="Lolo Boy"
                   fill
                   className="object-cover"
                   sizes="128px"
                 />
               </div>
-              <CardTitle className="text-xl mb-1">Lolo Boy</CardTitle>
-              <p className="text-xs font-bold text-kasama-primary uppercase tracking-wider mb-3">The Energizer</p>
+              <CardTitle className="text-xl mb-1">{t('family.boy.title')}</CardTitle>
+              <p className="text-xs font-bold text-kasama-primary uppercase tracking-wider mb-3">{t('family.boy.role')}</p>
               <CardDescription className="text-sm">
-                Full of life, stories, and movement.
+                {t('family.boy.desc')}
               </CardDescription>
             </Card>
           </FadeIn>
@@ -387,17 +360,17 @@ export default function LandingPage() {
             <Card className="flex flex-col h-full text-center items-center p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
               <div className="relative aspect-square w-32 overflow-hidden rounded-full border-4 border-white shadow-md bg-kasama-primary/10 mb-4">
                 <Image
-                  src="/images/kasama/annie.png"
+                  src="/images/kasama/kasama-preparing-for-love.webp"
                   alt="Annie"
                   fill
                   className="object-cover"
                   sizes="128px"
                 />
               </div>
-              <CardTitle className="text-xl mb-1">Annie</CardTitle>
-              <p className="text-xs font-bold text-kasama-secondary uppercase tracking-wider mb-3">The Guide</p>
+              <CardTitle className="text-xl mb-1">{t('family.annie.title')}</CardTitle>
+              <p className="text-xs font-bold text-kasama-secondary uppercase tracking-wider mb-3">{t('family.annie.role')}</p>
               <CardDescription className="text-sm">
-                Helps families set up and manage the Kasama experience.
+                {t('family.annie.desc')}
               </CardDescription>
             </Card>
           </FadeIn>
@@ -408,24 +381,24 @@ export default function LandingPage() {
       <Section className="bg-kasama-cream py-16">
         <FadeIn className="mx-auto max-w-3xl text-center space-y-8">
           <h2 className="text-3xl font-bold tracking-tight text-kasama-espresso sm:text-4xl">
-            Safe, Private, and Family-First
+            {t('trust.title')}
           </h2>
           <div className="grid gap-4 sm:grid-cols-2 text-left max-w-2xl mx-auto">
             <div className="flex items-center gap-3 bg-white p-4 rounded-xl shadow-sm border border-black/5">
               <CheckCircle2 className="h-6 w-6 text-kasama-primary shrink-0" />
-              <span className="font-medium text-kasama-espresso">Your family&apos;s data stays private</span>
+              <span className="font-medium text-kasama-espresso">{t('trust.1')}</span>
             </div>
             <div className="flex items-center gap-3 bg-white p-4 rounded-xl shadow-sm border border-black/5">
               <CheckCircle2 className="h-6 w-6 text-kasama-primary shrink-0" />
-              <span className="font-medium text-kasama-espresso">Designed with senior accessibility in mind</span>
+              <span className="font-medium text-kasama-espresso">{t('trust.2')}</span>
             </div>
             <div className="flex items-center gap-3 bg-white p-4 rounded-xl shadow-sm border border-black/5">
               <CheckCircle2 className="h-6 w-6 text-kasama-primary shrink-0" />
-              <span className="font-medium text-kasama-espresso">Built for Filipino families</span>
+              <span className="font-medium text-kasama-espresso">{t('trust.3')}</span>
             </div>
             <div className="flex items-center gap-3 bg-white p-4 rounded-xl shadow-sm border border-black/5">
               <CheckCircle2 className="h-6 w-6 text-kasama-primary shrink-0" />
-              <span className="font-medium text-kasama-espresso">No ads or spam</span>
+              <span className="font-medium text-kasama-espresso">{t('trust.4')}</span>
             </div>
           </div>
         </FadeIn>
@@ -436,30 +409,30 @@ export default function LandingPage() {
         <FadeIn className="mx-auto max-w-3xl space-y-8">
           <div className="text-center space-y-4 mb-12">
             <h2 className="text-3xl font-bold tracking-tight text-kasama-espresso sm:text-4xl">
-              Frequently Asked Questions
+              {t('faq.title')}
             </h2>
           </div>
           
           <div className="space-y-6">
             <div className="space-y-2">
-              <h3 className="text-xl font-bold text-kasama-espresso">What is Kasama PH?</h3>
-              <p className="text-kasama-muted">Kasama PH is an elderly care app designed specifically for Filipino families. It provides medicine reminders, emergency alerts (Bantay SOS), and a way to stay connected daily.</p>
+              <h3 className="text-xl font-bold text-kasama-espresso">{t('faq.1.q')}</h3>
+              <p className="text-kasama-muted">{t('faq.1.a')}</p>
             </div>
             <div className="space-y-2">
-              <h3 className="text-xl font-bold text-kasama-espresso">Who is Kasama for?</h3>
-              <p className="text-kasama-muted">It is for seniors who want to stay independent, and for their family members (like OFWs or busy adult children) who want to provide remote care and ensure their parents are safe.</p>
+              <h3 className="text-xl font-bold text-kasama-espresso">{t('faq.2.q')}</h3>
+              <p className="text-kasama-muted">{t('faq.2.a')}</p>
             </div>
             <div className="space-y-2">
-              <h3 className="text-xl font-bold text-kasama-espresso">Does Lola or Lolo need a smartphone?</h3>
-              <p className="text-kasama-muted">Yes, they will need a basic smartphone or tablet. However, the Kasama app is designed to be extremely simple, with large buttons and voice-guided interfaces so even those who aren&apos;t tech-savvy can use it easily.</p>
+              <h3 className="text-xl font-bold text-kasama-espresso">{t('faq.3.q')}</h3>
+              <p className="text-kasama-muted">{t('faq.3.a')}</p>
             </div>
             <div className="space-y-2">
-              <h3 className="text-xl font-bold text-kasama-espresso">Can families monitor from abroad?</h3>
-              <p className="text-kasama-muted">Absolutely. Kasama is perfect for OFWs. As long as both devices have an internet connection, you can manage medicine schedules and receive alerts from anywhere in the world.</p>
+              <h3 className="text-xl font-bold text-kasama-espresso">{t('faq.4.q')}</h3>
+              <p className="text-kasama-muted">{t('faq.4.a')}</p>
             </div>
             <div className="space-y-2">
-              <h3 className="text-xl font-bold text-kasama-espresso">Is Kasama a medical device?</h3>
-              <p className="text-kasama-muted">No, Kasama is a family connection and reminder tool. It is not intended to diagnose, treat, or replace professional medical advice or emergency services.</p>
+              <h3 className="text-xl font-bold text-kasama-espresso">{t('faq.5.q')}</h3>
+              <p className="text-kasama-muted">{t('faq.5.a')}</p>
             </div>
           </div>
         </FadeIn>
@@ -470,14 +443,14 @@ export default function LandingPage() {
         <FadeIn className="relative rounded-3xl bg-kasama-primary/5 px-6 py-16 sm:px-12 sm:py-24 lg:px-16 border border-kasama-primary/10">
           <div className="relative z-10 mx-auto max-w-2xl text-center">
             <h2 className="text-4xl font-bold tracking-tight text-kasama-espresso sm:text-5xl mb-6">
-              Hindi nag-iisa si Lola at Lolo.
+              {t('close.title')}
             </h2>
             <p className="text-xl text-kasama-muted mb-10">
-              May Kasama sila araw-araw. Join the waitlist today and be the first to bring Kasama PH to your family.
+              {t('close.subtitle')}
             </p>
             <Link href="/waitlist" tabIndex={-1}>
               <Button size="lg" className="w-full sm:w-auto text-lg px-10 h-14 shadow-[0_8px_20px_rgba(255,113,91,0.4)]">
-                Maging Unang Kasama &rarr;
+                {t('close.cta')}
               </Button>
             </Link>
           </div>

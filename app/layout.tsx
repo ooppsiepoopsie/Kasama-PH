@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter, Nunito } from 'next/font/google';
 import './globals.css'; // Global styles
+import { LanguageProvider } from '@/lib/i18n';
 
 // Body/UI Text
 const inter = Inter({
@@ -78,7 +79,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${inter.variable} ${nunito.variable}`} data-scroll-behavior="smooth">
       <body className="min-h-screen bg-kasama-cream text-kasama-espresso font-sans antialiased selection:bg-kasama-primary/20" suppressHydrationWarning>
-        {children}
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );

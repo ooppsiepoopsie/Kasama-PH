@@ -1,20 +1,16 @@
+'use client'
+
 import * as React from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { Metadata } from "next"
 import { Heart } from "lucide-react"
 import { SITE_CONFIG } from "@/lib/constants"
 import { WaitlistForm } from "@/components/forms/WaitlistForm"
+import { useLanguage } from "@/lib/i18n"
 
-export const metadata: Metadata = {
-  title: "Join the Waitlist | Be the First to Experience Kasama PH",
-  description: "Sign up to get early access to Kasama PH. Join our family and help us shape the future of elderly care in the Philippines.",
-  alternates: {
-    canonical: '/waitlist',
-  },
-}
+export function WaitlistContent() {
+  const { t } = useLanguage();
 
-export default function WaitlistPage() {
   return (
     <div className="flex min-h-screen flex-col bg-kasama-cream">
       {/* 1. Minimal Header */}
@@ -38,17 +34,17 @@ export default function WaitlistPage() {
         <div className="relative flex flex-1 flex-col justify-center bg-kasama-primary/5 px-6 py-24 lg:px-16 xl:px-24 border-b lg:border-b-0 lg:border-r border-kasama-primary/10 overflow-hidden">
           <div className="relative z-10 max-w-xl">
             <h1 className="font-display text-4xl font-extrabold tracking-tight text-kasama-espresso sm:text-5xl lg:text-6xl mb-6">
-              Maging bahagi ng aming pamilya.
+              {t('waitlist.title')}
             </h1>
             <p className="text-xl text-kasama-muted">
-              Sign up to get early access and updates. We are building Kasama PH to bring Filipino families closer together, no matter the distance.
+              {t('waitlist.subtitle')}
             </p>
           </div>
 
           {/* Decorative Illustration */}
           <div className="relative mt-12 aspect-video w-full max-w-lg rounded-3xl overflow-hidden shadow-2xl border border-black/5 bg-white/50 lg:mt-16">
             <Image
-              src="/images/kasama/kasama-generational-care-story.webp"
+              src="/images/kasama/kasama-preparing-for-love.webp"
               alt="A warm group illustration of Lola Zeny, Leo, Lolo Boy, and Annie looking directly at the user, smiling"
               fill
               className="object-cover"
@@ -66,10 +62,10 @@ export default function WaitlistPage() {
           <div className="w-full max-w-md space-y-8">
             <div className="space-y-2 text-center lg:text-left">
               <h2 className="font-display text-3xl font-bold text-kasama-espresso">
-                Join the Waitlist
+                {t('waitlist.form.title')}
               </h2>
               <p className="text-kasama-muted">
-                Enter your details below to secure your spot.
+                {t('waitlist.form.subtitle')}
               </p>
             </div>
             
@@ -80,23 +76,24 @@ export default function WaitlistPage() {
             <div className="pt-4 space-y-2 text-sm text-kasama-espresso font-medium">
               <div className="flex items-center gap-2">
                 <Heart className="h-4 w-4 text-kasama-primary" />
-                <span>Early access to Kasama</span>
+                <span>{t('waitlist.trust.1')}</span>
               </div>
               <div className="flex items-center gap-2">
                 <Heart className="h-4 w-4 text-kasama-primary" />
-                <span>First to try new features</span>
+                <span>{t('waitlist.trust.2')}</span>
               </div>
               <div className="flex items-center gap-2">
                 <Heart className="h-4 w-4 text-kasama-primary" />
-                <span>Help shape the app</span>
+                <span>{t('waitlist.trust.3')}</span>
               </div>
             </div>
 
             <p className="text-center text-sm text-kasama-muted lg:text-left mt-6">
-              By joining, you agree to our{" "}
+              {t('waitlist.privacy').split('Privacy Policy')[0]}
               <Link href="#" className="underline underline-offset-4 hover:text-kasama-primary">
                 Privacy Policy
-              </Link>.
+              </Link>
+              {t('waitlist.privacy').split('Privacy Policy')[1]}
             </p>
           </div>
         </div>
