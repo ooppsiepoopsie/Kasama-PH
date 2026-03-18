@@ -1,19 +1,13 @@
-import * as React from "react"
-import { Navbar } from "@/components/layout/Navbar"
-import { Footer } from "@/components/layout/Footer"
+import type { Metadata } from 'next';
 
-export default function MarketingLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
-  return (
-    <div className="flex min-h-screen flex-col">
-      <Navbar />
-      <main className="flex-1">
-        {children}
-      </main>
-      <Footer />
-    </div>
-  )
+export const metadata: Metadata = {
+  title: 'Kasama PH | Ang Kaibigan ng Lola at Lolo',
+  description: 'A premium elderly care app for Filipino families, featuring medicine reminders, emergency alerts, and family connection.',
+  alternates: {
+    canonical: '/',
+  },
+}
+
+export default function MarketingLayout({ children }: { children: React.ReactNode }) {
+  return <>{children}</>;
 }

@@ -1,0 +1,20 @@
+{
+  "nav": {
+    "features": "Features",
+    "about": "About",
+    "waitlist": "Join Waitlist"
+  },
+  "hero": {
+    "title": "Kasama: The Friend of Lola and Lolo",
+    "subtitle": "An app that helps Filipino families care for their elderly parents through medicine reminders, emergency alerts, and daily connection.",
+    "cta": "Join Waitlist",
+    "features": "See Features"
+  },
+  "comic": {
+    "title": "Far from home? Kasama namin sila.",
+    "subtitle": "Hindi mo kailangang mag-alala. Kahit malayo ang pamilya, may Kasama sila araw-araw.",
+    "panel1": "\"Did Mama take her medicine today?\"",
+    "panel2": "\"Oh, time for my vitamins! Salamat, Kasama.\"",
+    "panel3": "Peace of mind, wherever you are."
+  }
+}

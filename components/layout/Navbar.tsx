@@ -4,26 +4,21 @@ import * as React from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
-import { Menu, X, Globe } from "lucide-react"
+import { Menu, X } from "lucide-react"
 import { motion, AnimatePresence } from "motion/react"
 import { Button } from "@/components/ui/button"
+import { LanguageSwitcher } from "@/components/LanguageSwitcher"
 import { NAVIGATION_LINKS, SITE_CONFIG } from "@/lib/constants"
 import { cn } from "@/lib/utils"
-import { useLanguage } from "@/lib/i18n"
 
 export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
   const pathname = usePathname()
-  const { language, setLanguage, t } = useLanguage()
 
   // Close mobile menu automatically when the route changes
   React.useEffect(() => {
     setIsMobileMenuOpen(false)
   }, [pathname])
-
-  const toggleLanguage = () => {
-    setLanguage(language === 'en' ? 'tl' : 'en')
-  }
 
   return (
     <header className="sticky top-0 z-50 w-full overflow-x-hidden border-b border-black/5 bg-white/60 backdrop-blur-xl transition-all">
@@ -53,16 +48,9 @@ export function Navbar() {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-10" aria-label="Main Navigation">
+          <LanguageSwitcher />
           {NAVIGATION_LINKS.map((link) => {
             const isActive = pathname === link.href;
-            // Map link labels to translation keys
-            const getTranslationKey = (label: string) => {
-              if (label === 'Features') return 'nav.features';
-              if (label === 'How It Works') return 'nav.howItWorks';
-              if (label === 'About') return 'nav.about';
-              return label;
-            };
-            
             return (
               <Link
                 key={link.href}
@@ -73,74 +61,53 @@ export function Navbar() {
                 )}
                 aria-current={isActive ? "page" : undefined}
               >
-                {t(getTranslationKey(link.label) as any)}
+                {link.label}
               </Link>
             );
           })}
         </nav>
 
-        {/* Desktop Actions */}
-        <div className="hidden md:flex items-center gap-4">
-          <button 
-            onClick={toggleLanguage}
-            className="flex items-center gap-2 text-sm font-medium text-kasama-espresso hover:text-kasama-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-kasama-secondary rounded-md px-2 py-1"
-            aria-label="Toggle Language"
-          >
-            <Globe className="h-4 w-4" />
-            <span className="uppercase">{language}</span>
-          </button>
-          
+        {/* Desktop CTA */}
+        <div className="hidden md:flex">
           <Link href="/waitlist" tabIndex={-1}>
             <Button variant="outline" className="border-kasama-primary text-kasama-primary hover:bg-kasama-primary hover:text-white px-6 rounded-full text-sm font-semibold transition-all">
-              {t('nav.joinWaitlist')}
+              Join Waitlist
             </Button>
           </Link>
         </div>
 
-        {/* Mobile Actions */}
-        <div className="flex items-center gap-2 md:hidden">
-          <button 
-            onClick={toggleLanguage}
-            className="flex items-center justify-center rounded-md p-2 text-kasama-espresso hover:bg-black/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-kasama-secondary"
-            aria-label="Toggle Language"
-          >
-            <Globe className="h-5 w-5" />
-            <span className="ml-1 text-xs font-bold uppercase">{language}</span>
-          </button>
-
-          {/* Mobile Menu Toggle */}
-          <button
-            type="button"
-            className="inline-flex items-center justify-center rounded-md p-2 text-kasama-espresso hover:bg-black/5 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-kasama-secondary"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-expanded={isMobileMenuOpen}
-            aria-label="Toggle navigation menu"
-          >
-            <AnimatePresence mode="wait" initial={false}>
-              {isMobileMenuOpen ? (
-                <motion.div
-                  key="close"
-                  initial={{ opacity: 0, rotate: -90 }}
-                  animate={{ opacity: 1, rotate: 0 }}
-                  exit={{ opacity: 0, rotate: 90 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <X className="h-6 w-6" aria-hidden="true" />
-                </motion.div>
-              ) : (
-                <motion.div
-                  key="menu"
-                  initial={{ opacity: 0, rotate: 90 }}
-                  animate={{ opacity: 1, rotate: 0 }}
-                  exit={{ opacity: 0, rotate: -90 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <Menu className="h-6 w-6" aria-hidden="true" />
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </button>
-        </div>
+        {/* Mobile Menu Toggle */}
+        <button
+          type="button"
+          className="inline-flex items-center justify-center rounded-md p-2 text-kasama-espresso hover:bg-black/5 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-kasama-secondary md:hidden"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-expanded={isMobileMenuOpen}
+          aria-label="Toggle navigation menu"
+        >
+          <AnimatePresence mode="wait" initial={false}>
+            {isMobileMenuOpen ? (
+              <motion.div
+                key="close"
+                initial={{ opacity: 0, rotate: -90 }}
+                animate={{ opacity: 1, rotate: 0 }}
+                exit={{ opacity: 0, rotate: 90 }}
+                transition={{ duration: 0.2 }}
+              >
+                <X className="h-6 w-6" aria-hidden="true" />
+              </motion.div>
+            ) : (
+              <motion.div
+                key="menu"
+                initial={{ opacity: 0, rotate: 90 }}
+                animate={{ opacity: 1, rotate: 0 }}
+                exit={{ opacity: 0, rotate: -90 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Menu className="h-6 w-6" aria-hidden="true" />
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </button>
       </div>
 
       {/* Mobile Navigation Dropdown */}
@@ -156,13 +123,6 @@ export function Navbar() {
             <nav className="flex flex-col space-y-4" aria-label="Mobile Navigation">
             {NAVIGATION_LINKS.map((link) => {
               const isActive = pathname === link.href;
-              const getTranslationKey = (label: string) => {
-                if (label === 'Features') return 'nav.features';
-                if (label === 'How It Works') return 'nav.howItWorks';
-                if (label === 'About') return 'nav.about';
-                return label;
-              };
-              
               return (
                 <Link
                   key={link.href}
@@ -176,13 +136,13 @@ export function Navbar() {
                   )}
                   aria-current={isActive ? "page" : undefined}
                 >
-                  {t(getTranslationKey(link.label) as any)}
+                  {link.label}
                 </Link>
               );
             })}
             <div className="pt-4">
               <Link href="/waitlist" tabIndex={-1} className="block w-full" onClick={() => setIsMobileMenuOpen(false)}>
-                <Button className="w-full">{t('nav.joinWaitlist')}</Button>
+                <Button className="w-full">Join Waitlist</Button>
               </Link>
             </div>
           </nav>

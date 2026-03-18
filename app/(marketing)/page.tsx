@@ -1,23 +1,18 @@
+'use client';
+
 import * as React from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { Metadata } from "next"
 import { ArrowRight, HeartPulse, ShieldAlert, Mic, CheckCircle2 } from "lucide-react"
 import { Section } from "@/components/layout/Section"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { FadeIn, Float } from "@/components/animations/FadeIn"
 import { FeatureCard } from "@/components/animations/FeatureCard"
-
-export const metadata: Metadata = {
-  title: 'Kasama PH | Ang Kaibigan ng Lola at Lolo',
-  description: 'A premium elderly care app for Filipino families, featuring medicine reminders, emergency alerts, and family connection.',
-  alternates: {
-    canonical: '/',
-  },
-}
+import { useLanguage } from "@/components/LanguageProvider"
 
 export default function LandingPage() {
+  const { t } = useLanguage();
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
@@ -49,24 +44,21 @@ export default function LandingPage() {
           <FadeIn direction="right" className="flex flex-col justify-center space-y-10 text-center lg:text-left">
             <div className="space-y-6">
               <h1 className="text-5xl font-bold tracking-tight text-kasama-espresso sm:text-6xl xl:text-7xl leading-tight">
-                Kasama: Ang Kaibigan ng Lola at Lolo
+                {t('hero.title')}
               </h1>
               <p className="mx-auto max-w-2xl text-xl text-kasama-espresso/80 font-medium lg:mx-0 leading-[1.6]">
-                An app that helps Filipino families care for their elderly parents through medicine reminders, emergency alerts, and daily connection.
-              </p>
-              <p className="mx-auto max-w-2xl text-lg text-kasama-muted lg:mx-0 leading-[1.6]">
-                Simple lang. Hindi ka nag-iisa, Lo. A comprehensive elderly care app designed for seniors.
+                {t('hero.subtitle')}
               </p>
             </div>
             <div className="flex flex-col gap-4 sm:flex-row sm:justify-center lg:justify-start">
               <Link href="/waitlist" tabIndex={-1}>
                 <Button size="lg" className="w-full sm:w-auto rounded-full px-10 py-7 text-lg shadow-sm hover:shadow-md transition-all">
-                  Join Waitlist
+                  {t('hero.cta')}
                 </Button>
               </Link>
               <Link href="/features" tabIndex={-1}>
                 <Button variant="outline" size="lg" className="w-full sm:w-auto rounded-full px-10 py-7 text-lg border-kasama-espresso/10 text-kasama-espresso hover:bg-kasama-espresso/5 transition-all">
-                  See Features
+                  {t('hero.features')}
                 </Button>
               </Link>
             </div>
@@ -98,10 +90,10 @@ export default function LandingPage() {
       <Section className="bg-white">
         <FadeIn className="text-center mb-16 space-y-4">
           <h2 className="text-4xl font-bold tracking-tight text-kasama-espresso sm:text-5xl">
-            Far from home? Kasama namin sila.
+            {t('comic.title')}
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-kasama-muted">
-            Hindi mo kailangang mag-alala. Kahit malayo ang pamilya, may Kasama sila araw-araw.
+            {t('comic.subtitle')}
           </p>
         </FadeIn>
 
@@ -121,7 +113,7 @@ export default function LandingPage() {
               </div>
             </Float>
             <p className="text-center text-kasama-espresso font-medium">
-              &quot;Did Mama take her medicine today?&quot;
+              {t('comic.panel1')}
             </p>
           </FadeIn>
 
@@ -139,7 +131,7 @@ export default function LandingPage() {
               </div>
             </Float>
             <p className="text-center text-kasama-espresso font-medium">
-              &quot;Oh, time for my vitamins! Salamat, Kasama.&quot;
+              {t('comic.panel2')}
             </p>
           </FadeIn>
 
@@ -157,7 +149,7 @@ export default function LandingPage() {
               </div>
             </Float>
             <p className="text-center text-kasama-espresso font-medium">
-              Peace of mind, wherever you are.
+              {t('comic.panel3')}
             </p>
           </FadeIn>
         </div>

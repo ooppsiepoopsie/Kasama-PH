@@ -1,0 +1,20 @@
+{
+  "nav": {
+    "features": "Mga Tampok",
+    "about": "Tungkol sa Amin",
+    "waitlist": "Sumali sa Waitlist"
+  },
+  "hero": {
+    "title": "Kasama: Ang Kaibigan ng Lola at Lolo",
+    "subtitle": "Isang app na tumutulong sa mga pamilyang Pilipino na mag-alaga ng kanilang mga magulang sa pamamagitan ng paalala sa gamot, emergency alerts, at pang-araw-araw na koneksyon.",
+    "cta": "Sumali sa Waitlist",
+    "features": "Tingnan ang Mga Tampok"
+  },
+  "comic": {
+    "title": "Malayo sa tahanan? Kasama namin sila.",
+    "subtitle": "Hindi mo kailangang mag-alala. Kahit malayo ang pamilya, may Kasama sila araw-araw.",
+    "panel1": "\"Ininom na kaya ni Mama ang gamot niya ngayon?\"",
+    "panel2": "\"Ay, oras na para sa bitamina ko! Salamat, Kasama.\"",
+    "panel3": "Kapayapaan ng isip, nasaan ka man."
+  }
+}

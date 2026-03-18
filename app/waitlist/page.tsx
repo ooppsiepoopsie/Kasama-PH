@@ -1,18 +1,11 @@
+'use client';
+
 import * as React from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { Metadata } from "next"
 import { Heart } from "lucide-react"
 import { SITE_CONFIG } from "@/lib/constants"
 import { WaitlistForm } from "@/components/forms/WaitlistForm"
-
-export const metadata: Metadata = {
-  title: "Join the Waitlist | Be the First to Experience Kasama PH",
-  description: "Sign up to get early access to Kasama PH. Join our family and help us shape the future of elderly care in the Philippines.",
-  alternates: {
-    canonical: '/waitlist',
-  },
-}
 
 export default function WaitlistPage() {
   return (

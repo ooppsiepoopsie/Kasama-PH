@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter, Quicksand } from 'next/font/google';
+import { LanguageProvider } from '@/components/LanguageProvider';
 import './globals.css'; // Global styles
 
 // Body/UI Text
@@ -78,7 +79,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${inter.variable} ${quicksand.variable}`} data-scroll-behavior="smooth">
       <body className="min-h-screen bg-kasama-cream text-kasama-espresso font-sans antialiased selection:bg-kasama-primary/20" suppressHydrationWarning>
-        {children}
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );
